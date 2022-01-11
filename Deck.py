@@ -38,3 +38,6 @@ class Deck(object):
     def show_deck(self):
         for card in self.cards:
             card.show()
+
+    def get_cards(self):
+        return self.cards

@@ -1,0 +1,21 @@
+carti de final de joc:
+inimi (x = 30 , y = 30 , latime = 140, inaltime = 200)
+romburi (x = 200 , y = 30 , latime = 140, inaltime = 200)
+frunze (x = 370 , y = 30 , latime = 140, inaltime = 200)
+trefle (x = 540 , y = 30 , latime = 140, inaltime = 200)
+carte resturi1 (x = 1150 , y = 30 , latime = 140, inaltime = 200)
+carte resturi2 (x = 1320 , y = 30 , latime = 140, inaltime = 200)
+
+
+carti combinatii:
+unu (x = 60 , y = 280 , latime = 140, inaltime = 200)
+doi (x = 230 , y = 280 , latime = 140, inaltime = 200)
+trei (x = 400 , y = 280 , latime = 140, inaltime = 200)
+patru (x = 570 , y = 280 , latime = 140, inaltime = 200)
+cinci (x = 740 , y = 280 , latime = 140, inaltime = 200)
+sase (x = 910 , y = 280 , latime = 140, inaltime = 200)
+sapte (x = 1080 , y = 280 , latime = 140, inaltime = 200)
+
+
+pas pe inaltime +45
+

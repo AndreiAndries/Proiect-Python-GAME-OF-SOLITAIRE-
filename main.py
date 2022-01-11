@@ -5,58 +5,58 @@ import pygame
 
 
 def setup():
-    card1 = Card(1, "rosu", "inima", "", 0, 0, 0, 0)
-    card2 = Card(2, "rosu", "inima", "", 0, 0, 0, 0)
-    card3 = Card(3, "rosu", "inima", "", 0, 0, 0, 0)
-    card4 = Card(4, "rosu", "inima", "", 0, 0, 0, 0)
-    card5 = Card(5, "rosu", "inima", "", 0, 0, 0, 0)
-    card6 = Card(6, "rosu", "inima", "", 0, 0, 0, 0)
-    card7 = Card(7, "rosu", "inima", "", 0, 0, 0, 0)
-    card8 = Card(8, "rosu", "inima", "", 0, 0, 0, 0)
-    card9 = Card(9, "rosu", "inima", "", 0, 0, 0, 0)
-    card10 = Card(10, "rosu", "inima", "", 0, 0, 0, 0)
-    card11 = Card(11, "rosu", "inima", "", 0, 0, 0, 0)
-    card12 = Card(12, "rosu", "inima", "", 0, 0, 0, 0)
-    card13 = Card(13, "rosu", "inima", "", 0, 0, 0, 0)
-    card14 = Card(1, "rosu", "romb", "", 0, 0, 0, 0)
-    card15 = Card(2, "rosu", "romb", "", 0, 0, 0, 0)
-    card16 = Card(3, "rosu", "romb", "", 0, 0, 0, 0)
-    card17 = Card(4, "rosu", "romb", "", 0, 0, 0, 0)
-    card18 = Card(5, "rosu", "romb", "", 0, 0, 0, 0)
-    card19 = Card(6, "rosu", "romb", "", 0, 0, 0, 0)
-    card20 = Card(7, "rosu", "romb", "", 0, 0, 0, 0)
-    card21 = Card(8, "rosu", "romb", "", 0, 0, 0, 0)
-    card22 = Card(9, "rosu", "romb", "", 0, 0, 0, 0)
-    card23 = Card(10, "rosu", "romb", "", 0, 0, 0, 0)
-    card24 = Card(11, "rosu", "romb", "", 0, 0, 0, 0)
-    card25 = Card(12, "rosu", "romb", "", 0, 0, 0, 0)
-    card26 = Card(13, "rosu", "romb", "", 0, 0, 0, 0)
-    card27 = Card(1, "negru", "frunza", "", 0, 0, 0, 0)
-    card28 = Card(2, "negru", "frunza", "", 0, 0, 0, 0)
-    card29 = Card(3, "negru", "frunza", "", 0, 0, 0, 0)
-    card30 = Card(4, "negru", "frunza", "", 0, 0, 0, 0)
-    card31 = Card(5, "negru", "frunza", "", 0, 0, 0, 0)
-    card32 = Card(6, "negru", "frunza", "", 0, 0, 0, 0)
-    card33 = Card(7, "negru", "frunza", "", 0, 0, 0, 0)
-    card34 = Card(8, "negru", "frunza", "", 0, 0, 0, 0)
-    card35 = Card(9, "negru", "frunza", "", 0, 0, 0, 0)
-    card36 = Card(10, "negru", "frunza", "", 0, 0, 0, 0)
-    card37 = Card(11, "negru", "frunza", "", 0, 0, 0, 0)
-    card38 = Card(12, "negru", "frunza", "", 0, 0, 0, 0)
-    card39 = Card(13, "negru", "frunza", "", 0, 0, 0, 0)
-    card40 = Card(1, "negru", "trefla", "", 0, 0, 0, 0)
-    card41 = Card(2, "negru", "trefla", "", 0, 0, 0, 0)
-    card42 = Card(3, "negru", "trefla", "", 0, 0, 0, 0)
-    card43 = Card(4, "negru", "trefla", "", 0, 0, 0, 0)
-    card44 = Card(5, "negru", "trefla", "", 0, 0, 0, 0)
-    card45 = Card(6, "negru", "trefla", "", 0, 0, 0, 0)
-    card46 = Card(7, "negru", "trefla", "", 0, 0, 0, 0)
-    card47 = Card(8, "negru", "trefla", "", 0, 0, 0, 0)
-    card48 = Card(9, "negru", "trefla", "", 0, 0, 0, 0)
-    card49 = Card(10, "negru", "trefla", "", 0, 0, 0, 0)
-    card50 = Card(11, "negru", "trefla", "", 0, 0, 0, 0)
-    card51 = Card(12, "negru", "trefla", "", 0, 0, 0, 0)
-    card52 = Card(13, "negru", "trefla", "", 0, 0, 0, 0)
+    card1 = Card(1, "rosu", "inima", 'Cards\\asDeInima.jpg', 0, 0, 0, 0)
+    card2 = Card(2, "rosu", "inima", 'Cards\\doiDeInima.jpg', 0, 0, 0, 0)
+    card3 = Card(3, "rosu", "inima", 'Cards\\treiDeInima.jpg', 0, 0, 0, 0)
+    card4 = Card(4, "rosu", "inima", 'Cards\\patruDeInima.jpg', 0, 0, 0, 0)
+    card5 = Card(5, "rosu", "inima", 'Cards\\cinciDeInima.jpg', 0, 0, 0, 0)
+    card6 = Card(6, "rosu", "inima", 'Cards\\saseDeInima.jpg', 0, 0, 0, 0)
+    card7 = Card(7, "rosu", "inima", 'Cards\\sapteDeInima.jpg', 0, 0, 0, 0)
+    card8 = Card(8, "rosu", "inima", 'Cards\\optDeInima.jpg', 0, 0, 0, 0)
+    card9 = Card(9, "rosu", "inima", 'Cards\\nouaDeInima.jpg', 0, 0, 0, 0)
+    card10 = Card(10, "rosu", "inima", 'Cards\\zeceDeInima.jpg', 0, 0, 0, 0)
+    card11 = Card(11, "rosu", "inima", 'Cards\\jaletDeInima.jpg', 0, 0, 0, 0)
+    card12 = Card(12, "rosu", "inima", 'Cards\\damaDeInima.jpg', 0, 0, 0, 0)
+    card13 = Card(13, "rosu", "inima", 'Cards\\popaDeInima.jpg', 0, 0, 0, 0)
+    card14 = Card(1, "rosu", "romb", 'Cards\\asDeRomb.jpg', 0, 0, 0, 0)
+    card15 = Card(2, "rosu", "romb", 'Cards\\doiDeRomb.jpg', 0, 0, 0, 0)
+    card16 = Card(3, "rosu", "romb", 'Cards\\treiDeRomb.jpg', 0, 0, 0, 0)
+    card17 = Card(4, "rosu", "romb", 'Cards\\patruDeRomb.jpg', 0, 0, 0, 0)
+    card18 = Card(5, "rosu", "romb", 'Cards\\cinciDeRomb.jpg', 0, 0, 0, 0)
+    card19 = Card(6, "rosu", "romb", 'Cards\\saseDeRomb.jpg', 0, 0, 0, 0)
+    card20 = Card(7, "rosu", "romb", 'Cards\\sapteDeRomb.jpg', 0, 0, 0, 0)
+    card21 = Card(8, "rosu", "romb", 'Cards\\optDeRomb.jpg', 0, 0, 0, 0)
+    card22 = Card(9, "rosu", "romb", 'Cards\\nouaDeRomb.jpg', 0, 0, 0, 0)
+    card23 = Card(10, "rosu", "romb", 'Cards\\zeceDeRomb.jpg', 0, 0, 0, 0)
+    card24 = Card(11, "rosu", "romb", 'Cards\\jaletDeRomb.jpg', 0, 0, 0, 0)
+    card25 = Card(12, "rosu", "romb", 'Cards\\damaDeRomb.jpg', 0, 0, 0, 0)
+    card26 = Card(13, "rosu", "romb", 'Cards\\popaDeRomb.jpg', 0, 0, 0, 0)
+    card27 = Card(1, "negru", "frunza", 'Cards\\asDeFrunza.jpg', 0, 0, 0, 0)
+    card28 = Card(2, "negru", "frunza", 'Cards\\doiDeFrunza.jpg', 0, 0, 0, 0)
+    card29 = Card(3, "negru", "frunza", 'Cards\\treiDeFrunza.jpg', 0, 0, 0, 0)
+    card30 = Card(4, "negru", "frunza", 'Cards\\patruDeFrunza.jpg', 0, 0, 0, 0)
+    card31 = Card(5, "negru", "frunza", 'Cards\\cinciDeFrunza.jpg', 0, 0, 0, 0)
+    card32 = Card(6, "negru", "frunza", 'Cards\\saseDeFrunza.jpg', 0, 0, 0, 0)
+    card33 = Card(7, "negru", "frunza", 'Cards\\sapteDeFrunza.jpg', 0, 0, 0, 0)
+    card34 = Card(8, "negru", "frunza", 'Cards\\optDeFrunza.jpg', 0, 0, 0, 0)
+    card35 = Card(9, "negru", "frunza", 'Cards\\nouaDeFrunza.jpg', 0, 0, 0, 0)
+    card36 = Card(10, "negru", "frunza", 'Cards\\zeceDeFrunza.jpg', 0, 0, 0, 0)
+    card37 = Card(11, "negru", "frunza", 'Cards\\jaletDeFrunza.jpg', 0, 0, 0, 0)
+    card38 = Card(12, "negru", "frunza", 'Cards\\damaDeFrunza.jpg', 0, 0, 0, 0)
+    card39 = Card(13, "negru", "frunza", 'Cards\\popaDeFrunza.jpg', 0, 0, 0, 0)
+    card40 = Card(1, "negru", "trefla", 'Cards\\asDeTrefla.jpg', 0, 0, 0, 0)
+    card41 = Card(2, "negru", "trefla", 'Cards\\doiDeTrefla.jpg', 0, 0, 0, 0)
+    card42 = Card(3, "negru", "trefla", 'Cards\\treieTrefla.jpg', 0, 0, 0, 0)
+    card43 = Card(4, "negru", "trefla", 'Cards\\patruDeTrefla.jpg', 0, 0, 0, 0)
+    card44 = Card(5, "negru", "trefla", 'Cards\\cinciDeTrefla.jpg', 0, 0, 0, 0)
+    card45 = Card(6, "negru", "trefla", 'Cards\\saseDeTrefla.jpg', 0, 0, 0, 0)
+    card46 = Card(7, "negru", "trefla", 'Cards\\sapteDeTrefla.jpg', 0, 0, 0, 0)
+    card47 = Card(8, "negru", "trefla", 'Cards\\optDeTrefla.jpg', 0, 0, 0, 0)
+    card48 = Card(9, "negru", "trefla", 'Cards\\nouaDeTrefla.jpg', 0, 0, 0, 0)
+    card49 = Card(10, "negru", "trefla", 'Cards\\zeceDeTrefla.jpg', 0, 0, 0, 0)
+    card50 = Card(11, "negru", "trefla", 'Cards\\jaletDeTrefla.jpg', 0, 0, 0, 0)
+    card51 = Card(12, "negru", "trefla", 'Cards\\damaDeTrefla.jpg', 0, 0, 0, 0)
+    card52 = Card(13, "negru", "trefla", 'Cards\\popaDeTrefla.jpg', 0, 0, 0, 0)
 
     deck = Deck()
     deck.add_card_to_deck(card1)
@@ -111,17 +111,203 @@ def setup():
     deck.add_card_to_deck(card50)
     deck.add_card_to_deck(card51)
     deck.add_card_to_deck(card52)
-
-    game = Game(deck)
-    game.arange()
+    g = Game(deck)
+    g.arange()
+    return g
 
 
 def cards_on_table(imgage, x, y):
     screen.blit(imgage, (x, y))
 
 
+def print_scene(g: Game):
+    # inimi (x = 30 , y = 30 , latime = 140, inaltime = 200)
+    pygame.draw.rect(screen, (0, 0, 0), (30, 30, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (30, 30, 140, 5))
+    pygame.draw.rect(screen, (0, 0, 0), (165, 30, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (30, 225, 140, 5))
+
+    # romburi (x = 200 , y = 30 , latime = 140, inaltime = 200)
+    pygame.draw.rect(screen, (0, 0, 0), (200, 30, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (200, 30, 140, 5))
+    pygame.draw.rect(screen, (0, 0, 0), (335, 30, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (200, 225, 140, 5))
+
+    # frunze (x = 370 , y = 30 , latime = 140, inaltime = 200)
+    pygame.draw.rect(screen, (0, 0, 0), (370, 30, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (370, 30, 140, 5))
+    pygame.draw.rect(screen, (0, 0, 0), (505, 30, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (370, 225, 140, 5))
+
+    # trefle (x = 540 , y = 30 , latime = 140, inaltime = 200)
+    pygame.draw.rect(screen, (0, 0, 0), (540, 30, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (540, 30, 140, 5))
+    pygame.draw.rect(screen, (0, 0, 0), (675, 30, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (540, 225, 140, 5))
+
+    # resturi2 (x = 1320 , y = 30 , latime = 140, inaltime = 200)
+    pygame.draw.rect(screen, (0, 0, 0), (1320, 30, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (1320, 30, 140, 5))
+    pygame.draw.rect(screen, (0, 0, 0), (1455, 30, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (1320, 225, 140, 5))
+
+    # resturi1 (x = 1150 , y = 30 , latime = 140, inaltime = 200)
+    pygame.draw.rect(screen, (0, 0, 0), (1150, 30, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (1150, 30, 140, 5))
+    pygame.draw.rect(screen, (0, 0, 0), (1285, 30, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (1150, 225, 140, 5))
+
+    # unu (x = 60 , y = 280 , latime = 140, inaltime = 200)
+    pygame.draw.rect(screen, (0, 0, 0), (60, 280, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (60, 280, 140, 5))
+    pygame.draw.rect(screen, (0, 0, 0), (195, 280, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (60, 475, 140, 5))
+
+    # doi (x = 230 , y = 280 , latime = 140, inaltime = 200)
+    pygame.draw.rect(screen, (0, 0, 0), (230, 280, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (230, 280, 140, 5))
+    pygame.draw.rect(screen, (0, 0, 0), (365, 280, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (230, 475, 140, 5))
+
+    # trei(x=400, y=280, latime=140, inaltime=200)
+    pygame.draw.rect(screen, (0, 0, 0), (400, 280, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (400, 280, 140, 5))
+    pygame.draw.rect(screen, (0, 0, 0), (535, 280, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (400, 475, 140, 5))
+
+    # patru(x=570, y=280, latime=140, inaltime=200)
+    pygame.draw.rect(screen, (0, 0, 0), (570, 280, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (570, 280, 140, 5))
+    pygame.draw.rect(screen, (0, 0, 0), (705, 280, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (570, 475, 140, 5))
+
+    # cinci (x = 740 , y = 280 , latime = 140, inaltime = 200)
+    pygame.draw.rect(screen, (0, 0, 0), (740, 280, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (740, 280, 140, 5))
+    pygame.draw.rect(screen, (0, 0, 0), (875, 280, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (740, 475, 140, 5))
+
+    # sase (x = 910 , y = 280 , latime = 140, inaltime = 200)
+    pygame.draw.rect(screen, (0, 0, 0), (910, 280, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (910, 280, 140, 5))
+    pygame.draw.rect(screen, (0, 0, 0), (1045, 280, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (910, 475, 140, 5))
+
+    # sapte (x = 1080 , y = 280 , latime = 140, inaltime = 200)
+    pygame.draw.rect(screen, (0, 0, 0), (1080, 280, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (1080, 280, 140, 5))
+    pygame.draw.rect(screen, (0, 0, 0), (1215, 280, 5, 200))
+    pygame.draw.rect(screen, (0, 0, 0), (1080, 475, 140, 5))
+
+    pygame.draw.rect(screen, (0, 0, 0), (0, 240, 1500, 20))
+
+    inimi = g.get_inimi()
+    if len(inimi) > 0:
+        image = inimi[-1].get_link()
+        x = inimi[-1].get_x1()
+        y = inimi[-1].get_y1()
+        card_inimi = pygame.transform.scale(pygame.image.load(image), (140, 200))
+        cards_on_table(card_inimi, x, y)
+    romburi = g.get_romburi()
+    if len(romburi) > 0:
+        image = romburi[-1].get_link()
+        x = romburi[-1].get_x1()
+        y = romburi[-1].get_y1()
+        card_romburi = pygame.transform.scale(pygame.image.load(image), (140, 200))
+        cards_on_table(card_romburi, x, y)
+    frunze = g.get_frunze()
+    if len(frunze) > 0:
+        image = frunze[-1].get_link()
+        x = frunze[-1].get_x1()
+        y = frunze[-1].get_y1()
+        card_frunze = pygame.transform.scale(pygame.image.load(image), (140, 200))
+        cards_on_table(card_frunze, x, y)
+    trefle = g.get_trefle()
+    if len(trefle) > 0:
+        image = trefle[-1].get_link()
+        x = trefle[-1].get_x1()
+        y = trefle[-1].get_y1()
+        card_trefle = pygame.transform.scale(pygame.image.load(image), (140, 200))
+        cards_on_table(card_trefle, x, y)
+    resturi2 = g.get_rests2()
+    if len(resturi2) > 0:
+        image = resturi2[-1].get_link()
+        x = resturi2[-1].get_x1()
+        y = resturi2[-1].get_y1()
+        card_resturi2 = pygame.transform.scale(pygame.image.load(image), (140, 200))
+        cards_on_table(card_resturi2, x, y)
+    resturi1 = g.get_rests1()
+    if len(resturi1) > 0:
+        card_resturi1 = pygame.transform.scale(pygame.image.load('Cards\\back.jpg'), (140, 200))
+        cards_on_table(card_resturi1, 1320, 30)
+    unu = g.get_unu()
+    if len(unu) > 0:
+        for carte in unu:
+            if carte.return_hide():
+                card = pygame.transform.scale(pygame.image.load('Cards\\back.jpg'), (140, 200))
+                cards_on_table(card, carte.get_x1(), carte.get_y1())
+            else:
+                card = pygame.transform.scale(pygame.image.load(carte.get_link()), (140, 200))
+                cards_on_table(card, carte.get_x1(), carte.get_y1())
+    doi = g.get_doi()
+    if len(doi) > 0:
+        for carte in doi:
+            if carte.return_hide():
+                card = pygame.transform.scale(pygame.image.load('Cards\\back.jpg'), (140, 200))
+                cards_on_table(card, carte.get_x1(), carte.get_y1())
+            else:
+                card = pygame.transform.scale(pygame.image.load(carte.get_link()), (140, 200))
+                cards_on_table(card, carte.get_x1(), carte.get_y1())
+    trei = g.get_trei()
+    if len(trei) > 0:
+        for carte in trei:
+            if carte.return_hide():
+                card = pygame.transform.scale(pygame.image.load('Cards\\back.jpg'), (140, 200))
+                cards_on_table(card, carte.get_x1(), carte.get_y1())
+            else:
+                card = pygame.transform.scale(pygame.image.load(carte.get_link()), (140, 200))
+                cards_on_table(card, carte.get_x1(), carte.get_y1())
+    patru = g.get_patru()
+    if len(patru) > 0:
+        for carte in patru:
+            if carte.return_hide():
+                card = pygame.transform.scale(pygame.image.load('Cards\\back.jpg'), (140, 200))
+                cards_on_table(card, carte.get_x1(), carte.get_y1())
+            else:
+                card = pygame.transform.scale(pygame.image.load(carte.get_link()), (140, 200))
+                cards_on_table(card, carte.get_x1(), carte.get_y1())
+    cinci = g.get_cinci()
+    if len(cinci) > 0:
+        for carte in cinci:
+            if carte.return_hide():
+                card = pygame.transform.scale(pygame.image.load('Cards\\back.jpg'), (140, 200))
+                cards_on_table(card, carte.get_x1(), carte.get_y1())
+            else:
+                card = pygame.transform.scale(pygame.image.load(carte.get_link()), (140, 200))
+                cards_on_table(card, carte.get_x1(), carte.get_y1())
+    sase = g.get_sase()
+    if len(sase) > 0:
+        for carte in sase:
+            if carte.return_hide():
+                card = pygame.transform.scale(pygame.image.load('Cards\\back.jpg'), (140, 200))
+                cards_on_table(card, carte.get_x1(), carte.get_y1())
+            else:
+                card = pygame.transform.scale(pygame.image.load(carte.get_link()), (140, 200))
+                cards_on_table(card, carte.get_x1(), carte.get_y1())
+    sapte = g.get_sapte()
+    if len(sapte) > 0:
+        for carte in sapte:
+            if carte.return_hide():
+                card = pygame.transform.scale(pygame.image.load('Cards\\back.jpg'), (140, 200))
+                cards_on_table(card, carte.get_x1(), carte.get_y1())
+            else:
+                card = pygame.transform.scale(pygame.image.load(carte.get_link()), (140, 200))
+                cards_on_table(card, carte.get_x1(), carte.get_y1())
+
+
 if __name__ == '__main__':
-    setup()
+    game = setup()
+    game.show_Table()
     pygame.init()
     screen = pygame.display.set_mode((1500, 900))
     # Background
@@ -130,19 +316,6 @@ if __name__ == '__main__':
     pygame.display.set_caption("GAME OF SOLITAIRE")
     icon = pygame.image.load('Cards\\logo.jpg')
     pygame.display.set_icon(icon)
-    cardTest1 = pygame.transform.scale(pygame.image.load('Cards\\asDeFrunza.jpg'), (140, 200))
-    cardTest2 = pygame.transform.scale(pygame.image.load('Cards\\asDeTrefla.jpg'), (140, 200))
-    cardTest3 = pygame.transform.scale(pygame.image.load('Cards\\asDeInima.jpg'), (140, 200))
-    cardTest4 = pygame.transform.scale(pygame.image.load('Cards\\asDeRomb.jpg'), (140, 200))
-    cardTest5 = pygame.transform.scale(pygame.image.load('Cards\\back.jpg'), (140, 200))
-    cardTest6 = pygame.transform.scale(pygame.image.load('Cards\\popaDeRomb.jpg'), (140, 200))
-    cardTest7 = pygame.transform.scale(pygame.image.load('Cards\\popaDeTrefla.jpg'), (140, 200))
-    cardTest8 = pygame.transform.scale(pygame.image.load('Cards\\popaDeInima.jpg'), (140, 200))
-    cardTest9 = pygame.transform.scale(pygame.image.load('Cards\\popaDeFrunza.jpg'), (140, 200))
-    cardTest10 = pygame.transform.scale(pygame.image.load('Cards\\damaDeRomb.jpg'), (140, 200))
-    cardTest11 = pygame.transform.scale(pygame.image.load('Cards\\damaDeFrunza.jpg'), (140, 200))
-    cardTest12 = pygame.transform.scale(pygame.image.load('Cards\\damaDeTrefla.jpg'), (140, 200))
-    cardTest13 = pygame.transform.scale(pygame.image.load('Cards\\jaletDeFrunza.jpg'), (140, 200))
     # Game Loop
     running = True
     while running:
@@ -151,40 +324,7 @@ if __name__ == '__main__':
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-        cards_on_table(cardTest1, 30, 30)
-        cards_on_table(cardTest2, 200, 30)
-        cards_on_table(cardTest3, 370, 30)
-        cards_on_table(cardTest4, 540, 30)
-        cards_on_table(cardTest5, 1320, 30)
-        cards_on_table(cardTest13, 1150, 30)
-        pygame.draw.rect(screen, (0, 0, 0), (0, 240, 1500, 20))
-        cards_on_table(cardTest6, 60, 280)
-        cards_on_table(cardTest5, 230, 280)
-        cards_on_table(cardTest7, 230, 325)
-        cards_on_table(cardTest5, 400, 280)
-        cards_on_table(cardTest5, 400, 325)
-        cards_on_table(cardTest8, 400, 370)
-        cards_on_table(cardTest5, 570, 280)
-        cards_on_table(cardTest5, 570, 325)
-        cards_on_table(cardTest5, 570, 370)
-        cards_on_table(cardTest9, 570, 415)
-        cards_on_table(cardTest5, 740, 280)
-        cards_on_table(cardTest5, 740, 325)
-        cards_on_table(cardTest5, 740, 370)
-        cards_on_table(cardTest5, 740, 415)
-        cards_on_table(cardTest10, 740, 460)
-        cards_on_table(cardTest5, 910, 280)
-        cards_on_table(cardTest5, 910, 325)
-        cards_on_table(cardTest5, 910, 370)
-        cards_on_table(cardTest5, 910, 415)
-        cards_on_table(cardTest5, 910, 460)
-        cards_on_table(cardTest11, 910, 505)
-        cards_on_table(cardTest5, 1080, 280)
-        cards_on_table(cardTest5, 1080, 325)
-        cards_on_table(cardTest5, 1080, 370)
-        cards_on_table(cardTest5, 1080, 415)
-        cards_on_table(cardTest5, 1080, 460)
-        cards_on_table(cardTest5, 1080, 505)
-        cards_on_table(cardTest12, 1080, 550)
+
+        print_scene(game)
 
         pygame.display.update()

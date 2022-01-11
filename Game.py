@@ -1,6 +1,7 @@
 from Deck import Deck
 from Card import Card
 
+
 class Game:
 
     def __init__(self, deck: Deck):
@@ -22,16 +23,22 @@ class Game:
 
     def arange(self):
         self.unu.add_card_to_deck(self.initial_deck.eliminate_and_return())
+        self.unu.retun_element(0).set_new_range(60, 280, 200, 480)
 
         self.doi.add_card_to_deck(self.initial_deck.eliminate_and_return())
         self.doi.add_card_to_deck(self.initial_deck.eliminate_and_return())
         self.doi.retun_element(0).change_hide()
+        self.doi.retun_element(0).set_new_range(230, 280, 370, 324)
+        self.doi.retun_element(1).set_new_range(230, 325, 370, 525)
 
         self.trei.add_card_to_deck(self.initial_deck.eliminate_and_return())
         self.trei.add_card_to_deck(self.initial_deck.eliminate_and_return())
         self.trei.add_card_to_deck(self.initial_deck.eliminate_and_return())
         self.trei.retun_element(0).change_hide()
         self.trei.retun_element(1).change_hide()
+        self.trei.retun_element(0).set_new_range(400, 280, 540, 324)
+        self.trei.retun_element(1).set_new_range(400, 325, 540, 369)
+        self.trei.retun_element(2).set_new_range(400, 370, 540, 570)
 
         self.patru.add_card_to_deck(self.initial_deck.eliminate_and_return())
         self.patru.add_card_to_deck(self.initial_deck.eliminate_and_return())
@@ -40,6 +47,10 @@ class Game:
         self.patru.retun_element(0).change_hide()
         self.patru.retun_element(1).change_hide()
         self.patru.retun_element(2).change_hide()
+        self.patru.retun_element(0).set_new_range(570, 280, 710, 324)
+        self.patru.retun_element(1).set_new_range(570, 325, 710, 369)
+        self.patru.retun_element(2).set_new_range(570, 370, 710, 414)
+        self.patru.retun_element(3).set_new_range(570, 415, 710, 615)
 
         self.cinci.add_card_to_deck(self.initial_deck.eliminate_and_return())
         self.cinci.add_card_to_deck(self.initial_deck.eliminate_and_return())
@@ -50,6 +61,11 @@ class Game:
         self.cinci.retun_element(1).change_hide()
         self.cinci.retun_element(2).change_hide()
         self.cinci.retun_element(3).change_hide()
+        self.cinci.retun_element(0).set_new_range(740, 280, 880, 324)
+        self.cinci.retun_element(1).set_new_range(740, 325, 880, 369)
+        self.cinci.retun_element(2).set_new_range(740, 370, 880, 414)
+        self.cinci.retun_element(3).set_new_range(740, 415, 880, 459)
+        self.cinci.retun_element(4).set_new_range(740, 460, 880, 660)
 
         self.sase.add_card_to_deck(self.initial_deck.eliminate_and_return())
         self.sase.add_card_to_deck(self.initial_deck.eliminate_and_return())
@@ -62,6 +78,12 @@ class Game:
         self.sase.retun_element(2).change_hide()
         self.sase.retun_element(3).change_hide()
         self.sase.retun_element(4).change_hide()
+        self.sase.retun_element(0).set_new_range(910, 280, 1050, 324)
+        self.sase.retun_element(1).set_new_range(910, 325, 1050, 369)
+        self.sase.retun_element(2).set_new_range(910, 370, 1050, 414)
+        self.sase.retun_element(3).set_new_range(910, 415, 1050, 459)
+        self.sase.retun_element(4).set_new_range(910, 460, 1050, 504)
+        self.sase.retun_element(5).set_new_range(910, 505, 1050, 705)
 
         self.sapte.add_card_to_deck(self.initial_deck.eliminate_and_return())
         self.sapte.add_card_to_deck(self.initial_deck.eliminate_and_return())
@@ -76,12 +98,20 @@ class Game:
         self.sapte.retun_element(3).change_hide()
         self.sapte.retun_element(4).change_hide()
         self.sapte.retun_element(5).change_hide()
+        self.sapte.retun_element(0).set_new_range(1080, 280, 1220, 324)
+        self.sapte.retun_element(1).set_new_range(1080, 325, 1220, 369)
+        self.sapte.retun_element(2).set_new_range(1080, 370, 1220, 414)
+        self.sapte.retun_element(3).set_new_range(1080, 415, 1220, 459)
+        self.sapte.retun_element(4).set_new_range(1080, 460, 1220, 504)
+        self.sapte.retun_element(5).set_new_range(1080, 505, 1220, 549)
+        self.sapte.retun_element(6).set_new_range(1080, 550, 1220, 750)
 
         while self.initial_deck.size() > 0:
             self.initial_deck.return_last_element().change_hide()
             self.rests1.add_card_to_deck(self.initial_deck.eliminate_and_return())
-
         self.rests1.reverse()
+        for card in self.rests1.get_cards():
+            card.set_new_range(1320, 30, 1460, 230)
 
     def final(self):
         ok1 = False
@@ -113,25 +143,25 @@ class Game:
             ok2 = False
         if self.inimi.size() == 0 or self.romburi.size() == 0 or self.frunze.size() == 0 or self.trefle.size() == 0:
             ok3 = False
-        for card in self.unu:
+        for card in self.unu.get_cards():
             if card.return_hide():
                 ok4 = False
-        for card in self.doi:
+        for card in self.doi.get_cards():
             if card.return_hide():
                 ok4 = False
-        for card in self.trei:
+        for card in self.trei.get_cards():
             if card.return_hide():
                 ok4 = False
-        for card in self.patru:
+        for card in self.patru.get_cards():
             if card.return_hide():
                 ok4 = False
-        for card in self.cinci:
+        for card in self.cinci.get_cards():
             if card.return_hide():
                 ok4 = False
-        for card in self.sase:
+        for card in self.sase.get_cards():
             if card.return_hide():
                 ok4 = False
-        for card in self.sapte:
+        for card in self.sapte.get_cards():
             if card.return_hide():
                 ok4 = False
         if ok1 and ok2 and ok3 and ok4:
@@ -246,8 +276,6 @@ class Game:
                 elif card.return_symbol() == "trefla" and card.retrun_value() == trefla.retun_value() + 1:
                     self.trefle.add_card_to_deck(self.sapte.eliminate_and_return())
 
-
-
     def show_Table(self):
         print("Inital Deck: ")
         self.initial_deck.show_deck()
@@ -277,3 +305,42 @@ class Game:
         self.rests1.show_deck()
         print("Rests 2: ")
         self.rests2.show_deck()
+
+    def get_unu(self):
+        return self.unu.get_cards()
+
+    def get_doi(self):
+        return self.doi.get_cards()
+
+    def get_trei(self):
+        return self.trei.get_cards()
+
+    def get_patru(self):
+        return self.patru.get_cards()
+
+    def get_cinci(self):
+        return self.cinci.get_cards()
+
+    def get_sase(self):
+        return self.sase.get_cards()
+
+    def get_sapte(self):
+        return self.sapte.get_cards()
+
+    def get_rests1(self):
+        return self.rests1.get_cards()
+
+    def get_rests2(self):
+        return self.rests2.get_cards()
+
+    def get_inimi(self):
+        return self.inimi.get_cards()
+
+    def get_romburi(self):
+        return self.romburi.get_cards()
+
+    def get_frunze(self):
+        return self.frunze.get_cards()
+
+    def get_trefle(self):
+        return self.trefle.get_cards()
