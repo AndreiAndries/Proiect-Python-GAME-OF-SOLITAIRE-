@@ -1,8 +1,10 @@
 from Game import Game
 from Deck import Deck
 from Card import Card
+import pygame
 
-if __name__ == '__main__':
+
+def setup():
     card1 = Card(1, "rosu", "inima", "", 0, 0, 0, 0)
     card2 = Card(2, "rosu", "inima", "", 0, 0, 0, 0)
     card3 = Card(3, "rosu", "inima", "", 0, 0, 0, 0)
@@ -112,4 +114,77 @@ if __name__ == '__main__':
 
     game = Game(deck)
     game.arange()
-    game.show_Table()
+
+
+def cards_on_table(imgage, x, y):
+    screen.blit(imgage, (x, y))
+
+
+if __name__ == '__main__':
+    setup()
+    pygame.init()
+    screen = pygame.display.set_mode((1500, 900))
+    # Background
+    background = pygame.transform.scale(pygame.image.load('Cards\\map.png'), (1500, 900))
+    # Title and Icon
+    pygame.display.set_caption("GAME OF SOLITAIRE")
+    icon = pygame.image.load('Cards\\logo.jpg')
+    pygame.display.set_icon(icon)
+    cardTest1 = pygame.transform.scale(pygame.image.load('Cards\\asDeFrunza.jpg'), (140, 200))
+    cardTest2 = pygame.transform.scale(pygame.image.load('Cards\\asDeTrefla.jpg'), (140, 200))
+    cardTest3 = pygame.transform.scale(pygame.image.load('Cards\\asDeInima.jpg'), (140, 200))
+    cardTest4 = pygame.transform.scale(pygame.image.load('Cards\\asDeRomb.jpg'), (140, 200))
+    cardTest5 = pygame.transform.scale(pygame.image.load('Cards\\back.jpg'), (140, 200))
+    cardTest6 = pygame.transform.scale(pygame.image.load('Cards\\popaDeRomb.jpg'), (140, 200))
+    cardTest7 = pygame.transform.scale(pygame.image.load('Cards\\popaDeTrefla.jpg'), (140, 200))
+    cardTest8 = pygame.transform.scale(pygame.image.load('Cards\\popaDeInima.jpg'), (140, 200))
+    cardTest9 = pygame.transform.scale(pygame.image.load('Cards\\popaDeFrunza.jpg'), (140, 200))
+    cardTest10 = pygame.transform.scale(pygame.image.load('Cards\\damaDeRomb.jpg'), (140, 200))
+    cardTest11 = pygame.transform.scale(pygame.image.load('Cards\\damaDeFrunza.jpg'), (140, 200))
+    cardTest12 = pygame.transform.scale(pygame.image.load('Cards\\damaDeTrefla.jpg'), (140, 200))
+    cardTest13 = pygame.transform.scale(pygame.image.load('Cards\\jaletDeFrunza.jpg'), (140, 200))
+    # Game Loop
+    running = True
+    while running:
+        screen.fill((0, 0, 0))
+        screen.blit(background, (0, 0))
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+        cards_on_table(cardTest1, 30, 30)
+        cards_on_table(cardTest2, 200, 30)
+        cards_on_table(cardTest3, 370, 30)
+        cards_on_table(cardTest4, 540, 30)
+        cards_on_table(cardTest5, 1320, 30)
+        cards_on_table(cardTest13, 1150, 30)
+        pygame.draw.rect(screen, (0, 0, 0), (0, 240, 1500, 20))
+        cards_on_table(cardTest6, 60, 280)
+        cards_on_table(cardTest5, 230, 280)
+        cards_on_table(cardTest7, 230, 325)
+        cards_on_table(cardTest5, 400, 280)
+        cards_on_table(cardTest5, 400, 325)
+        cards_on_table(cardTest8, 400, 370)
+        cards_on_table(cardTest5, 570, 280)
+        cards_on_table(cardTest5, 570, 325)
+        cards_on_table(cardTest5, 570, 370)
+        cards_on_table(cardTest9, 570, 415)
+        cards_on_table(cardTest5, 740, 280)
+        cards_on_table(cardTest5, 740, 325)
+        cards_on_table(cardTest5, 740, 370)
+        cards_on_table(cardTest5, 740, 415)
+        cards_on_table(cardTest10, 740, 460)
+        cards_on_table(cardTest5, 910, 280)
+        cards_on_table(cardTest5, 910, 325)
+        cards_on_table(cardTest5, 910, 370)
+        cards_on_table(cardTest5, 910, 415)
+        cards_on_table(cardTest5, 910, 460)
+        cards_on_table(cardTest11, 910, 505)
+        cards_on_table(cardTest5, 1080, 280)
+        cards_on_table(cardTest5, 1080, 325)
+        cards_on_table(cardTest5, 1080, 370)
+        cards_on_table(cardTest5, 1080, 415)
+        cards_on_table(cardTest5, 1080, 460)
+        cards_on_table(cardTest5, 1080, 505)
+        cards_on_table(cardTest12, 1080, 550)
+
+        pygame.display.update()

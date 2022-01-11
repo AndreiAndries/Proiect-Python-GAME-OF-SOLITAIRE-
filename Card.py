@@ -1,5 +1,5 @@
 class Card:
-    def __init__(self,value:int,color:str,symbol:str,link:str,x1:int,y1:int,x2:int,y2:int):
+    def __init__(self,value:int,color:str,symbol:str,link,x1:int,y1:int,x2:int,y2:int):
         self.value = value
         self.color = color
         self.symbol = symbol
