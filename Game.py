@@ -8,18 +8,44 @@ class Game:
         self.initial_deck = deck
         self.initial_deck.shuffle()
         self.romburi = Deck()
+        self.romburi.set_width(200,340)
+        self.romburi.set_height(30,230)
         self.inimi = Deck()
+        self.inimi.set_width(30,170)
+        self.inimi.set_height(30,230)
         self.trefle = Deck()
+        self.trefle.set_width(540,680)
+        self.trefle.set_height(30,230)
         self.frunze = Deck()
+        self.frunze.set_width(370,510)
+        self.frunze.set_height(30,230)
         self.unu = Deck()
+        self.unu.set_width(60,200)
+        self.unu.set_height(280,480)
         self.doi = Deck()
+        self.doi.set_width(230,370)
+        self.doi.set_height(280,480)
         self.trei = Deck()
+        self.trei.set_width(400,540)
+        self.trei.set_height(280,480)
         self.patru = Deck()
+        self.patru.set_width(570,710)
+        self.patru.set_height(280,480)
         self.cinci = Deck()
+        self.cinci.set_width(740,880)
+        self.cinci.set_height(280,480)
         self.sase = Deck()
+        self.sase.set_width(910,1050)
+        self.sase.set_height(280,480)
         self.sapte = Deck()
+        self.sapte.set_width(1080,1220)
+        self.sapte.set_width(280,480)
         self.rests1 = Deck()
+        self.rests1.set_width(1320,1460)
+        self.rests1.set_height(30,230)
         self.rests2 = Deck()
+        self.rests2.set_width(1150,1290)
+        self.rests2.set_height(30,230)
 
     def arange(self):
         self.unu.add_card_to_deck(self.initial_deck.eliminate_and_return())
@@ -344,3 +370,42 @@ class Game:
 
     def get_trefle(self):
         return self.trefle.get_cards()
+
+    def get_rests1_deck(self):
+        return self.rests1
+
+    def get_rests2_deck(self):
+        return self.rests2
+
+    def get_inimi_deck(self):
+        return self.inimi
+
+    def get_frunze_deck(self):
+        return self.frunze
+
+    def get_trefle_deck(self):
+        return self.trefle
+
+    def get_unu_deck(self):
+        return self.unu
+
+    def get_romburi_deck(self):
+        return self.romburi
+
+    def get_doi_deck(self):
+        return self.doi
+
+    def get_trei_deck(self):
+        return self.trei
+
+    def get_patru_deck(self):
+        return self.patru
+
+    def get_cinci_deck(self):
+        return self.cinci
+
+    def get_sase_deck(self):
+        return self.sase
+
+    def get_sapte_deck(self):
+        return self.sapte

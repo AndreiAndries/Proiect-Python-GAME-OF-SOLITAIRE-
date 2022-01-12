@@ -3,8 +3,8 @@ inimi (x = 30 , y = 30 , latime = 140, inaltime = 200)
 romburi (x = 200 , y = 30 , latime = 140, inaltime = 200)
 frunze (x = 370 , y = 30 , latime = 140, inaltime = 200)
 trefle (x = 540 , y = 30 , latime = 140, inaltime = 200)
-carte resturi1 (x = 1150 , y = 30 , latime = 140, inaltime = 200)
-carte resturi2 (x = 1320 , y = 30 , latime = 140, inaltime = 200)
+carte resturi2 (x = 1150 , y = 30 , latime = 140, inaltime = 200)
+carte resturi1 (x = 1320 , y = 30 , latime = 140, inaltime = 200)
 
 
 carti combinatii:
