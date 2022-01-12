@@ -217,8 +217,8 @@ def make_resturi2_move(game: Game):
 
             elif len(game.get_unu()) == 0 and ok == False and element.retrun_value() == 13:
                 game.get_rests2().pop()
-                element.set_new_range(game.get_unu_deck().get_x1(),game.get_unu_deck().get_x2(),
-                                      game.get_unu_deck().get_y1(),game.get_unu_deck().get_y2() )
+                element.set_new_range(game.get_unu_deck().get_x1(),game.get_unu_deck().get_y1(),
+                                      game.get_unu_deck().get_x2(),game.get_unu_deck().get_y2() )
                 game.get_unu().append(element)
                 ok = True
 
@@ -244,8 +244,8 @@ def make_resturi2_move(game: Game):
 
             elif len(game.get_doi()) == 0 and ok == False and element.retrun_value() == 13:
                 game.get_rests2().pop()
-                element.set_new_range(game.get_doi_deck().get_x1(),game.get_doi_deck().get_x2(),
-                                      game.get_doi_deck().get_y1(),game.get_doi_deck().get_y2() )
+                element.set_new_range(game.get_doi_deck().get_x1(),game.get_doi_deck().get_y1(),
+                                      game.get_doi_deck().get_x2(),game.get_doi_deck().get_y2() )
                 game.get_doi().append(element)
                 ok = True
 
@@ -270,8 +270,8 @@ def make_resturi2_move(game: Game):
 
             elif len(game.get_trei()) == 0 and ok == False and element.retrun_value() == 13:
                 game.get_rests2().pop()
-                element.set_new_range(game.get_trei_deck().get_x1(),game.get_trei_deck().get_x2(),
-                                      game.get_trei_deck().get_y1(),game.get_trei_deck().get_y2() )
+                element.set_new_range(game.get_trei_deck().get_x1(),game.get_trei_deck().get_y1(),
+                                      game.get_trei_deck().get_x2(),game.get_trei_deck().get_y2() )
                 game.get_trei().append(element)
                 ok = True
 
@@ -296,8 +296,8 @@ def make_resturi2_move(game: Game):
 
             elif len(game.get_patru()) == 0 and ok == False and element.retrun_value() == 13:
                 game.get_rests2().pop()
-                element.set_new_range(game.get_patru_deck().get_x1(),game.get_patru_deck().get_x2(),
-                                      game.get_patru_deck().get_y1(),game.get_patru_deck().get_y2() )
+                element.set_new_range(game.get_patru_deck().get_x1(),game.get_patru_deck().get_y1(),
+                                      game.get_patru_deck().get_x2(),game.get_patru_deck().get_y2() )
                 game.get_patru().append(element)
                 ok = True
 
@@ -322,8 +322,8 @@ def make_resturi2_move(game: Game):
 
             elif len(game.get_cinci()) == 0 and ok == False and element.retrun_value() == 13:
                 game.get_rests2().pop()
-                element.set_new_range(game.get_cinci_deck().get_x1(),game.get_cinci_deck().get_x2(),
-                                      game.get_cinci_deck().get_y1(),game.get_cinci_deck().get_y2() )
+                element.set_new_range(game.get_cinci_deck().get_x1(),game.get_cinci_deck().get_y1(),
+                                      game.get_cinci_deck().get_x2(),game.get_cinci_deck().get_y2() )
                 game.get_cinci().append(element)
                 ok = True
 
@@ -348,8 +348,8 @@ def make_resturi2_move(game: Game):
 
             elif len(game.get_sase()) == 0 and ok == False and element.retrun_value() == 13:
                 game.get_rests2().pop()
-                element.set_new_range(game.get_sase_deck().get_x1(),game.get_sase_deck().get_x2(),
-                                      game.get_sase_deck().get_y1(),game.get_sase_deck().get_y2() )
+                element.set_new_range(game.get_sase_deck().get_x1(),game.get_sase_deck().get_y1(),
+                                      game.get_sase_deck().get_x2(),game.get_sase_deck().get_y2() )
                 game.get_sase().append(element)
                 ok = True
 
@@ -374,13 +374,3669 @@ def make_resturi2_move(game: Game):
 
             elif len(game.get_sapte()) == 0 and ok == False and element.retrun_value() == 13:
                 game.get_rests2().pop()
-                element.set_new_range(game.get_sapte_deck().get_x1(),game.get_sapte_deck().get_x2(),
-                                      game.get_sapte_deck().get_y1(),game.get_sapte_deck().get_y2() )
+                element.set_new_range(game.get_sapte_deck().get_x1(),game.get_sapte_deck().get_y1(),
+                                      game.get_sapte_deck().get_x2(),game.get_sapte_deck().get_y2() )
                 game.get_sapte().append(element)
 
 
 
+def make_unu_move(game,x,y):
+    if len(game.get_unu()) > 0:
+        n = range(0,len(game.get_unu()))
+        index = 0
+        for i in n:
+            x1 = game.get_unu()[i].get_x1()
+            x2 = game.get_unu()[i].get_x2()
+            y1 = game.get_unu()[i].get_y1()
+            y2 = game.get_unu()[i].get_y2()
+            hide = game.get_unu()[i].return_hide()
+            if x <= x2 and x >= x1 and y <= y2 and y >= y1 and hide == False:
+                index = i
+                break
+        if True:
+            single_card = False
+            if y2 - y1 > 44:
+                single_card = True
+            if single_card:
+                element = game.get_unu()[-1]
+                ok = False
+                if element.retrun_value() == 1:
+                    if element.return_symbol() == "inima":
+                        game.get_unu().pop()
+                        element.set_new_range(game.get_inimi_deck().get_x1(), game.get_inimi_deck().get_y1(),
+                                              game.get_inimi_deck().get_x2(), game.get_inimi_deck().get_y2())
+                        game.get_inimi().append(element)
+                        ok = True
 
+                    elif element.return_symbol() == "romb":
+                        game.get_unu().pop()
+                        element.set_new_range(game.get_romburi_deck().get_x1(), game.get_romburi_deck().get_y1(),
+                                             game.get_romburi_deck().get_x2(), game.get_romburi_deck().get_y2())
+                        game.get_romburi().append(element)
+                        ok = True
+
+                    elif element.return_symbol() == "trefla":
+                        game.get_unu().pop()
+                        element.set_new_range(game.get_trefle_deck().get_x1(), game.get_trefle_deck().get_y1(),
+                                             game.get_trefle_deck().get_x2(), game.get_trefle_deck().get_y2())
+                        game.get_trefle().append(element)
+                        ok = True
+
+                    elif element.return_symbol() == "frunza":
+                        game.get_unu().pop()
+                        element.set_new_range(game.get_frunze_deck().get_x1(), game.get_frunze_deck().get_y1(),
+                                             game.get_frunze_deck().get_x2(), game.get_frunze_deck().get_y2())
+                        game.get_frunze().append(element)
+                        ok = True
+                else:
+                    if len(game.get_inimi()) > 0 and ok == False:
+                        if element.return_symbol() == "inima" and element.retrun_value() == game.get_inimi()[-1].retrun_value() + 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_inimi_deck().get_x1(), game.get_inimi_deck().get_y1(),
+                                                  game.get_inimi_deck().get_x2(), game.get_inimi_deck().get_y2())
+                            game.get_inimi().append(element)
+                            ok = True
+
+                    if len(game.get_romburi()) > 0 and ok == False:
+                        if element.return_symbol() == "romb" and element.retrun_value() == game.get_romburi()[-1].retrun_value() + 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_romburi_deck().get_x1(),
+                                                  game.get_romburi_deck().get_y1(),
+                                                  game.get_romburi_deck().get_x2(),
+                                                  game.get_romburi_deck().get_y2())
+                            game.get_romburi().append(element)
+                            ok = True
+
+                    if len(game.get_trefle()) > 0 and ok == False:
+                        if element.return_symbol() == "trefla" and element.retrun_value() == game.get_trefle()[-1].retrun_value() + 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_trefle_deck().get_x1(), game.get_trefle_deck().get_y1(),
+                                                  game.get_trefle_deck().get_x2(), game.get_trefle_deck().get_y2())
+                            game.get_trefle().append(element)
+                            ok = True
+                    if len(game.get_frunze()) > 0 and ok == False:
+                        if element.return_symbol() == "frunza" and element.retrun_value() == game.get_frunze()[-1].retrun_value() + 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_frunze_deck().get_x1(), game.get_frunze_deck().get_y1(),
+                                                  game.get_frunze_deck().get_x2(), game.get_frunze_deck().get_y2())
+                            game.get_frunze().append(element)
+                            ok = True
+
+                    if len(game.get_doi()) > 0 and ok == False:
+                        if element.return_color() == "rosu" and game.get_doi()[-1].return_color() == "negru" and element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                                  game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                            game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(),
+                                                             game.get_doi()[-1].get_y1(),
+                                                             game.get_doi()[-1].get_x2(),
+                                                             game.get_doi()[-1].get_y1() + 44)
+                            game.get_doi().append(element)
+                            ok = True
+
+                        elif element.return_color() == "negru" and game.get_doi()[-1].return_color() == "rosu" and element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                                  game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                            game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(),
+                                                             game.get_doi()[-1].get_y1(),
+                                                             game.get_doi()[-1].get_x2(),
+                                                             game.get_doi()[-1].get_y1() + 44)
+                            game.get_doi().append(element)
+                            ok = True
+
+                    elif len(game.get_doi()) == 0 and ok == False and element.retrun_value() == 13:
+                        game.get_unu().pop()
+                        element.set_new_range(game.get_doi_deck().get_x1(), game.get_doi_deck().get_y1(),
+                                              game.get_doi_deck().get_x2(), game.get_doi_deck().get_y2())
+                        game.get_doi().append(element)
+                        ok = True
+                    if len(game.get_trei()) > 0 and ok == False:
+                        if element.return_color() == "rosu" and game.get_trei()[-1].return_color() == "negru" and element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                                  game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                            game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(),
+                                                              game.get_trei()[-1].get_y1(),
+                                                              game.get_trei()[-1].get_x2(),
+                                                              game.get_trei()[-1].get_y1() + 44)
+                            game.get_trei().append(element)
+                            ok = True
+
+                        elif element.return_color() == "negru" and game.get_trei()[-1].return_color() == "rosu" and element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                                  game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                            game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(),
+                                                              game.get_trei()[-1].get_y1(),
+                                                              game.get_trei()[-1].get_x2(),
+                                                              game.get_trei()[-1].get_y1() + 44)
+                            game.get_trei().append(element)
+                            ok = True
+
+                    elif len(game.get_trei()) == 0 and ok == False and element.retrun_value() == 13:
+                        game.get_unu().pop()
+                        element.set_new_range(game.get_trei_deck().get_x1(), game.get_trei_deck().get_y1(),
+                                              game.get_trei_deck().get_x2(), game.get_trei_deck().get_y2())
+                        game.get_trei().append(element)
+                        ok = True
+
+                    if len(game.get_patru()) > 0 and ok == False:
+                        if element.return_color() == "rosu" and game.get_patru()[-1].return_color() == "negru" and element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                                  game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                            game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(),
+                                                               game.get_patru()[-1].get_y1(),
+                                                               game.get_patru()[-1].get_x2(),
+                                                               game.get_patru()[-1].get_y1() + 44)
+                            game.get_patru().append(element)
+                            ok = True
+
+                        elif element.return_color() == "negru" and game.get_patru()[-1].return_color() == "rosu" and element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                                  game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                            game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(),
+                                                               game.get_patru()[-1].get_y1(),
+                                                               game.get_patru()[-1].get_x2(),
+                                                               game.get_patru()[-1].get_y1() + 44)
+                            game.get_patru().append(element)
+                            ok = True
+
+                    elif len(game.get_patru()) == 0 and ok == False and element.retrun_value() == 13:
+                        game.get_unu().pop()
+                        element.set_new_range(game.get_patru_deck().get_x1(), game.get_patru_deck().get_x2(),
+                                              game.get_patru_deck().get_y1(), game.get_patru_deck().get_y2())
+                        game.get_patru().append(element)
+                        ok = True
+
+                    if len(game.get_cinci()) > 0 and ok == False:
+                        if element.return_color() == "rosu" and game.get_cinci()[-1].return_color() == "negru" and element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                                  game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                            game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(),
+                                                               game.get_cinci()[-1].get_y1(),
+                                                               game.get_cinci()[-1].get_x2(),
+                                                               game.get_cinci()[-1].get_y1() + 44)
+                            game.get_cinci().append(element)
+                            ok = True
+
+                        elif element.return_color() == "negru" and game.get_cinci()[-1].return_color() == "rosu" and element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                                  game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                            game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(),
+                                                               game.get_cinci()[-1].get_y1(),
+                                                               game.get_cinci()[-1].get_x2(),
+                                                               game.get_cinci()[-1].get_y1() + 44)
+                            game.get_cinci().append(element)
+                            ok = True
+
+                    elif len(game.get_cinci()) == 0 and ok == False and element.retrun_value() == 13:
+                        game.get_unu().pop()
+                        element.set_new_range(game.get_cinci_deck().get_x1(), game.get_cinci_deck().get_y1(),
+                                              game.get_cinci_deck().get_x2(), game.get_cinci_deck().get_y2())
+                        game.get_cinci().append(element)
+                        ok = True
+
+                    if len(game.get_sase()) > 0 and ok == False:
+                        if element.return_color() == "rosu" and game.get_sase()[-1].return_color() == "negru" and element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                                  game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                            game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(),
+                                                              game.get_sase()[-1].get_y1(),
+                                                              game.get_sase()[-1].get_x2(),
+                                                              game.get_sase()[-1].get_y1() + 44)
+                            game.get_sase().append(element)
+                            ok = True
+
+                        elif element.return_color() == "negru" and game.get_sase()[-1].return_color() == "rosu" and element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                                  game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                            game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(),
+                                                              game.get_sase()[-1].get_y1(),
+                                                              game.get_sase()[-1].get_x2(),
+                                                              game.get_sase()[-1].get_y1() + 44)
+                            game.get_sase().append(element)
+                            ok = True
+
+                    elif len(game.get_sase()) == 0 and ok == False and element.retrun_value() == 13:
+                        game.get_unu().pop()
+                        element.set_new_range(game.get_sase_deck().get_x1(), game.get_sase_deck().get_y1(),
+                                              game.get_sase_deck().get_x2(), game.get_sase_deck().get_y2())
+                        game.get_sase().append(element)
+                        ok = True
+
+                    if len(game.get_sapte()) > 0 and ok == False:
+                        if element.return_color() == "rosu" and game.get_sapte()[-1].return_color() == "negru" and element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                                  game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                            game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(),
+                                                               game.get_sapte()[-1].get_y1(),
+                                                               game.get_sapte()[-1].get_x2(),
+                                                               game.get_sapte()[-1].get_y1() + 44)
+                            game.get_sapte().append(element)
+                            ok = True
+
+                        elif element.return_color() == "negru" and game.get_sapte()[-1].return_color() == "rosu" and element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                            game.get_unu().pop()
+                            element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                                  game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                            game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(),
+                                                              game.get_sapte()[-1].get_y1(),
+                                                              game.get_sapte()[-1].get_x2(),
+                                                              game.get_sapte()[-1].get_y1() + 44)
+                            game.get_sapte().append(element)
+                            ok = True
+
+                    elif len(game.get_sapte()) == 0 and ok == False and element.retrun_value() == 13:
+                        game.get_unu().pop()
+                        element.set_new_range(game.get_sapte_deck().get_x1(), game.get_sapte_deck().get_y1(),
+                                              game.get_sapte_deck().get_x2(), game.get_sapte_deck().get_y2())
+                        game.get_sapte().append(element)
+            else:
+                print("Suntem aici")
+                rezerva = []
+                while index < len(game.get_unu()):
+                    rezerva.append(game.get_unu().pop())
+                print(rezerva)
+                ok = False
+                if len(game.get_doi())>0:
+                    if rezerva[-1].retrun_value() == game.get_doi()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_doi()[-1].return_color():
+                        while len(rezerva) > 0:
+                            rezerva[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                                 game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                            game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                                  game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y1() + 44)
+                            game.get_doi().append(rezerva.pop())
+                        ok = True
+
+                elif len(rezerva) > 0:
+                    if len(game.get_doi()) == 0 and rezerva[-1].retrun_value() == 13:
+                        rezerva[-1].set_new_range(game.get_doi_deck().get_x1(), game.get_doi_deck().get_y1(),
+                                                      game.get_doi_deck().get_x2(), game.get_doi_deck().get_y2())
+                        game.get_doi().append(rezerva.pop())
+                        while len(rezerva) > 0:
+                            rezerva[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                                      game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                            game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                                            game.get_doi()[-1].get_x2(),
+                                                            game.get_doi()[-1].get_y1() + 44)
+                            game.get_doi().append(rezerva.pop())
+                        ok = True
+
+                if len(game.get_trei())>0 and ok == False:
+                    if rezerva[-1].retrun_value() == game.get_trei()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_trei()[-1].return_color():
+                        while len(rezerva) > 0:
+                            rezerva[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                                 game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                            game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                                  game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y1() + 44)
+                            game.get_trei().append(rezerva.pop())
+                        ok = True
+
+                elif len(rezerva) > 0:
+                    if len(game.get_trei()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                        rezerva[-1].set_new_range(game.get_trei_deck().get_x1(), game.get_trei_deck().get_y1(),
+                                                      game.get_trei_deck().get_x2(), game.get_trei_deck().get_y2())
+                        game.get_trei().append(rezerva.pop())
+                        while len(rezerva) > 0:
+                            rezerva[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                                      game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                            game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                                            game.get_trei()[-1].get_x2(),
+                                                            game.get_trei()[-1].get_y1() + 44)
+                            game.get_trei().append(rezerva.pop())
+                        ok = True
+
+                if len(game.get_patru())>0 and ok == False:
+                    if rezerva[-1].retrun_value() == game.get_patru()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_patru()[-1].return_color():
+                        while len(rezerva) > 0:
+                            rezerva[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                                 game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                            game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                                  game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y1() + 44)
+                            game.get_patru().append(rezerva.pop())
+                        ok = True
+
+                elif len(rezerva) > 0:
+                    if len(game.get_patru()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                        rezerva[-1].set_new_range(game.get_patru_deck().get_x1(), game.get_patru_deck().get_y1(),
+                                                      game.get_patru_deck().get_x2(), game.get_patru_deck().get_y2())
+                        game.get_patru().append(rezerva.pop())
+                        while len(rezerva) > 0:
+                            rezerva[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                                      game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                            game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                                            game.get_patru()[-1].get_x2(),
+                                                            game.get_patru()[-1].get_y1() + 44)
+                            game.get_patru().append(rezerva.pop())
+                        ok = True
+
+                if len(game.get_cinci())>0 and ok == False:
+                    if rezerva[-1].retrun_value() == game.get_cinci()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_cinci()[-1].return_color():
+                        while len(rezerva) > 0:
+                            rezerva[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                                 game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                            game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                                  game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y1() + 44)
+                            game.get_cinci().append(rezerva.pop())
+                        ok = True
+                elif len(rezerva) > 0:
+                    if len(game.get_cinci()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                        rezerva[-1].set_new_range(game.get_cinci_deck().get_x1(), game.get_cinci_deck().get_y1(),
+                                                      game.get_cinci_deck().get_x2(), game.get_cinci_deck().get_y2())
+                        game.get_cinci().append(rezerva.pop())
+                        while len(rezerva) > 0:
+                            rezerva[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                                      game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                            game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                                            game.get_cinci()[-1].get_x2(),
+                                                            game.get_cinci()[-1].get_y1() + 44)
+                            game.get_cinci().append(rezerva.pop())
+                        ok = True
+
+                if len(game.get_sase())>0 and ok == False:
+                    if rezerva[-1].retrun_value() == game.get_sase()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_sase()[-1].return_color():
+                        while len(rezerva) > 0:
+                            rezerva[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                                 game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                            game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                                  game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y1() + 44)
+                            game.get_sase().append(rezerva.pop())
+                        ok = True
+                elif len(rezerva) > 0:
+                    if len(game.get_sase()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                        rezerva[-1].set_new_range(game.get_sase_deck().get_x1(), game.get_sase_deck().get_y1(),
+                                                      game.get_sase_deck().get_x2(), game.get_sase_deck().get_y2())
+                        game.get_sase().append(rezerva.pop())
+                        while len(rezerva) > 0:
+                            rezerva[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                                      game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                            game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                                            game.get_sase()[-1].get_x2(),
+                                                            game.get_sase()[-1].get_y1() + 44)
+                            game.get_sase().append(rezerva.pop())
+                        ok = True
+
+                if len(game.get_sapte())>0 and ok == False:
+                    if rezerva[-1].retrun_value() == game.get_sapte()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_sapte()[-1].return_color():
+                        while len(rezerva) > 0:
+                            rezerva[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                                 game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                            game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                                  game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y1() + 44)
+                            game.get_sapte().append(rezerva.pop())
+                        ok = True
+                elif len(rezerva) > 0:
+                    if len(game.get_sapte()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                        rezerva[-1].set_new_range(game.get_sapte_deck().get_x1(), game.get_sapte_deck().get_y1(),
+                                                      game.get_sapte_deck().get_x2(), game.get_sapte_deck().get_y2())
+                        game.get_sapte().append(rezerva.pop())
+                        while len(rezerva) > 0:
+                            rezerva[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                                      game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                            game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                                            game.get_sapte()[-1].get_x2(),
+                                                            game.get_sapte()[-1].get_y1() + 44)
+                            game.get_sapte().append(rezerva.pop())
+                        ok = True
+                if ok == False :
+                    while len(rezerva) > 0:
+                        game.get_unu().append(rezerva.pop())
+                if len(game.get_unu()) > 0 :
+                    game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                                     game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 200)
+
+def make_doi_move(game,x,y):
+    if len(game.get_doi()) > 0:
+        n = range(0,len(game.get_doi()))
+        index = 0
+        for i in n:
+            x1 = game.get_doi()[i].get_x1()
+            x2 = game.get_doi()[i].get_x2()
+            y1 = game.get_doi()[i].get_y1()
+            y2 = game.get_doi()[i].get_y2()
+            hide = game.get_doi()[i].return_hide()
+            if x <= x2 and x >= x1 and y <= y2 and y >= y1 and hide == False:
+                index = i
+                break
+        single_card = False
+        if y2 - y1 > 44:
+            single_card = True
+        if single_card:
+            print("O carte")
+            element = game.get_doi()[-1]
+            ok = False
+            if element.retrun_value() == 1:
+                if element.return_symbol() == "inima":
+                    game.get_doi().pop()
+                    element.set_new_range(game.get_inimi_deck().get_x1(), game.get_inimi_deck().get_y1(),
+                                         game.get_inimi_deck().get_x2(), game.get_inimi_deck().get_y2())
+                    game.get_inimi().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "romb":
+                    game.get_doi().pop()
+                    element.set_new_range(game.get_romburi_deck().get_x1(), game.get_romburi_deck().get_y1(),
+                                         game.get_romburi_deck().get_x2(), game.get_romburi_deck().get_y2())
+                    game.get_romburi().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "trefla":
+                    game.get_doi().pop()
+                    element.set_new_range(game.get_trefle_deck().get_x1(), game.get_trefle_deck().get_y1(),
+                                         game.get_trefle_deck().get_x2(), game.get_trefle_deck().get_y2())
+                    game.get_trefle().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "frunza":
+                    game.get_doi().pop()
+                    element.set_new_range(game.get_frunze_deck().get_x1(), game.get_frunze_deck().get_y1(),
+                                         game.get_frunze_deck().get_x2(), game.get_frunze_deck().get_y2())
+                    game.get_frunze().append(element)
+                    ok = True
+            else:
+                if len(game.get_inimi()) > 0 and ok == False:
+                    if element.return_symbol() == "inima" and element.retrun_value() == game.get_inimi()[-1].retrun_value() + 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_inimi_deck().get_x1(), game.get_inimi_deck().get_y1(),
+                                              game.get_inimi_deck().get_x2(), game.get_inimi_deck().get_y2())
+                        game.get_inimi().append(element)
+                        ok = True
+
+                if len(game.get_romburi()) > 0 and ok == False:
+                    if element.return_symbol() == "romb" and element.retrun_value() == game.get_romburi()[-1].retrun_value() + 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_romburi_deck().get_x1(),
+                                               game.get_romburi_deck().get_y1(),
+                                               game.get_romburi_deck().get_x2(),
+                                               game.get_romburi_deck().get_y2())
+                        game.get_romburi().append(element)
+                        ok = True
+
+                if len(game.get_trefle()) > 0 and ok == False:
+                    if element.return_symbol() == "trefla" and element.retrun_value() == game.get_trefle()[-1].retrun_value() + 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_trefle_deck().get_x1(), game.get_trefle_deck().get_y1(),
+                                              game.get_trefle_deck().get_x2(), game.get_trefle_deck().get_y2())
+                        game.get_trefle().append(element)
+                        ok = True
+                if len(game.get_frunze()) > 0 and ok == False:
+                    if element.return_symbol() == "frunza" and element.retrun_value() == game.get_frunze()[-1].retrun_value() + 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_frunze_deck().get_x1(), game.get_frunze_deck().get_y1(),
+                                              game.get_frunze_deck().get_x2(), game.get_frunze_deck().get_y2())
+                        game.get_frunze().append(element)
+                        ok = True
+
+                if len(game.get_unu()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_unu()[-1].return_color() == "negru" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(),
+                                                         game.get_unu()[-1].get_y1(),
+                                                         game.get_unu()[-1].get_x2(),
+                                                         game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_unu()[-1].return_color() == "rosu" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(),
+                                                         game.get_unu()[-1].get_y1(),
+                                                         game.get_unu()[-1].get_x2(),
+                                                         game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(element)
+                        ok = True
+
+                elif len(game.get_unu()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_doi().pop()
+                    element.set_new_range(game.get_unu_deck().get_x1(), game.get_unu_deck().get_y1(),
+                                          game.get_unu_deck().get_x2(), game.get_unu_deck().get_y2())
+                    game.get_unu().append(element)
+                    ok = True
+                if len(game.get_trei()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_trei()[-1].return_color() == "negru" and element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                              game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(),
+                                                          game.get_trei()[-1].get_y1(),
+                                                          game.get_trei()[-1].get_x2(),
+                                                          game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_trei()[-1].return_color() == "rosu" and element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                              game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(),
+                                                          game.get_trei()[-1].get_y1(),
+                                                          game.get_trei()[-1].get_x2(),
+                                                          game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(element)
+                        ok = True
+
+                elif len(game.get_trei()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_doi().pop()
+                    element.set_new_range(game.get_trei_deck().get_x1(), game.get_trei_deck().get_y1(),
+                                          game.get_trei_deck().get_x2(), game.get_trei_deck().get_y2())
+                    game.get_trei().append(element)
+                    ok = True
+
+                if len(game.get_patru()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_patru()[-1].return_color() == "negru" and element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                              game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(),
+                                                           game.get_patru()[-1].get_y1(),
+                                                           game.get_patru()[-1].get_x2(),
+                                                           game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_patru()[-1].return_color() == "rosu" and element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                              game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(),
+                                                           game.get_patru()[-1].get_y1(),
+                                                           game.get_patru()[-1].get_x2(),
+                                                           game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(element)
+                        ok = True
+
+                elif len(game.get_patru()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_doi().pop()
+                    element.set_new_range(game.get_patru_deck().get_x1(), game.get_patru_deck().get_x2(),
+                                          game.get_patru_deck().get_y1(), game.get_patru_deck().get_y2())
+                    game.get_patru().append(element)
+                    ok = True
+
+                if len(game.get_cinci()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_cinci()[-1].return_color() == "negru" and element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                              game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(),
+                                                           game.get_cinci()[-1].get_y1(),
+                                                           game.get_cinci()[-1].get_x2(),
+                                                           game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_cinci()[-1].return_color() == "rosu" and element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                              game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(),
+                                                           game.get_cinci()[-1].get_y1(),
+                                                           game.get_cinci()[-1].get_x2(),
+                                                           game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(element)
+                        ok = True
+
+                elif len(game.get_cinci()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_doi().pop()
+                    element.set_new_range(game.get_cinci_deck().get_x1(), game.get_cinci_deck().get_y1(),
+                                          game.get_cinci_deck().get_x2(), game.get_cinci_deck().get_y2())
+                    game.get_cinci().append(element)
+                    ok = True
+
+                if len(game.get_sase()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_sase()[-1].return_color() == "negru" and element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                              game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(),
+                                                          game.get_sase()[-1].get_y1(),
+                                                          game.get_sase()[-1].get_x2(),
+                                                          game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_sase()[-1].return_color() == "rosu" and element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                              game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(),
+                                                          game.get_sase()[-1].get_y1(),
+                                                          game.get_sase()[-1].get_x2(),
+                                                          game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(element)
+                        ok = True
+
+                elif len(game.get_sase()) == 0 and ok == False and element.retrun_value() == 13:
+                     game.get_doi().pop()
+                     element.set_new_range(game.get_sase_deck().get_x1(), game.get_sase_deck().get_y1(),
+                                           game.get_sase_deck().get_x2(), game.get_sase_deck().get_y2())
+                     game.get_sase().append(element)
+                     ok = True
+
+                if len(game.get_sapte()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_sapte()[-1].return_color() == "negru" and element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                              game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                        game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(),
+                                                           game.get_sapte()[-1].get_y1(),
+                                                           game.get_sapte()[-1].get_x2(),
+                                                           game.get_sapte()[-1].get_y1() + 44)
+                        game.get_sapte().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_sapte()[-1].return_color() == "rosu" and element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                        game.get_doi().pop()
+                        element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                              game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                        game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(),
+                                                          game.get_sapte()[-1].get_y1(),
+                                                          game.get_sapte()[-1].get_x2(),
+                                                          game.get_sapte()[-1].get_y1() + 44)
+                        game.get_sapte().append(element)
+                        ok = True
+
+                elif len(game.get_sapte()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_doi().pop()
+                    element.set_new_range(game.get_sapte_deck().get_x1(), game.get_sapte_deck().get_y1(),
+                                          game.get_sapte_deck().get_x2(), game.get_sapte_deck().get_y2())
+                    game.get_sapte().append(element)
+        else:
+            print("Suntem aici")
+            rezerva = []
+            while index < len(game.get_doi()):
+                rezerva.append(game.get_doi().pop())
+            print(rezerva)
+            ok = False
+            if len(game.get_unu())>0:
+                if rezerva[-1].retrun_value() == game.get_unu()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_unu()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                            game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(rezerva.pop())
+                    ok = True
+
+            elif len(rezerva) > 0:
+                if len(game.get_unu()) == 0 and rezerva[-1].retrun_value() == 13:
+                    rezerva[-1].set_new_range(game.get_unu_deck().get_x1(), game.get_unu_deck().get_y1(),
+                                                  game.get_unu_deck().get_x2(), game.get_unu_deck().get_y2())
+                    game.get_unu().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                                  game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                                        game.get_unu()[-1].get_x2(),
+                                                        game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_trei())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_trei()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_trei()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                             game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                              game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(rezerva.pop())
+                    ok = True
+
+            elif len(rezerva) > 0:
+                if len(game.get_trei()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_trei_deck().get_x1(), game.get_trei_deck().get_y1(),
+                                                  game.get_trei_deck().get_x2(), game.get_trei_deck().get_y2())
+                    game.get_trei().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                                  game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                                        game.get_trei()[-1].get_x2(),
+                                                        game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_patru())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_patru()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_patru()[-1].return_color():
+                   while len(rezerva) > 0:
+                       rezerva[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                            game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                       game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                             game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y1() + 44)
+                       game.get_patru().append(rezerva.pop())
+                   ok = True
+
+            elif len(rezerva) > 0:
+                if len(game.get_patru()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_patru_deck().get_x1(), game.get_patru_deck().get_y1(),
+                                                  game.get_patru_deck().get_x2(), game.get_patru_deck().get_y2())
+                    game.get_patru().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                                  game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                                        game.get_patru()[-1].get_x2(),
+                                                        game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_cinci())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_cinci()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_cinci()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                            game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                             game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_cinci()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_cinci_deck().get_x1(), game.get_cinci_deck().get_y1(),
+                                                 game.get_cinci_deck().get_x2(), game.get_cinci_deck().get_y2())
+                    game.get_cinci().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                                  game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                                        game.get_cinci()[-1].get_x2(),
+                                                        game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_sase())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_sase()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_sase()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                             game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                              game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_sase()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_sase_deck().get_x1(), game.get_sase_deck().get_y1(),
+                                                  game.get_sase_deck().get_x2(), game.get_sase_deck().get_y2())
+                    game.get_sase().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                                  game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                                        game.get_sase()[-1].get_x2(),
+                                                        game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(rezerva.pop())
+                ok = True
+
+            if len(game.get_sapte())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_sapte()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_sapte()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                            game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                        game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                             game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y1() + 44)
+                        game.get_sapte().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_sapte()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_sapte_deck().get_x1(), game.get_sapte_deck().get_y1(),
+                                                  game.get_sapte_deck().get_x2(), game.get_sapte_deck().get_y2())
+                    game.get_sapte().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                         rezerva[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                                  game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                         game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                                        game.get_sapte()[-1].get_x2(),
+                                                        game.get_sapte()[-1].get_y1() + 44)
+                         game.get_sapte().append(rezerva.pop())
+                    ok = True
+            if ok == False :
+                while len(rezerva) > 0:
+                   game.get_doi().append(rezerva.pop())
+            if len(game.get_doi())>0:
+                game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y1() + 200)
+        if len(game.get_doi()) > 0:
+            if game.get_doi()[-1].return_hide():
+                game.get_doi()[-1].change_hide()
+
+def make_trei_move(game,x,y):
+    if len(game.get_trei()) > 0:
+        n = range(0,len(game.get_trei()))
+        index = 0
+        for i in n:
+            x1 = game.get_trei()[i].get_x1()
+            x2 = game.get_trei()[i].get_x2()
+            y1 = game.get_trei()[i].get_y1()
+            y2 = game.get_trei()[i].get_y2()
+            hide = game.get_trei()[i].return_hide()
+            if x <= x2 and x >= x1 and y <= y2 and y >= y1 and hide == False:
+                index = i
+                break
+        single_card = False
+        if y2 - y1 > 44:
+            single_card = True
+        if single_card:
+            print("O carte")
+            element = game.get_trei()[-1]
+            ok = False
+            if element.retrun_value() == 1:
+                if element.return_symbol() == "inima":
+                    game.get_trei().pop()
+                    element.set_new_range(game.get_inimi_deck().get_x1(), game.get_inimi_deck().get_y1(),
+                                         game.get_inimi_deck().get_x2(), game.get_inimi_deck().get_y2())
+                    game.get_inimi().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "romb":
+                    game.get_trei().pop()
+                    element.set_new_range(game.get_romburi_deck().get_x1(), game.get_romburi_deck().get_y1(),
+                                         game.get_romburi_deck().get_x2(), game.get_romburi_deck().get_y2())
+                    game.get_romburi().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "trefla":
+                    game.get_trei().pop()
+                    element.set_new_range(game.get_trefle_deck().get_x1(), game.get_trefle_deck().get_y1(),
+                                         game.get_trefle_deck().get_x2(), game.get_trefle_deck().get_y2())
+                    game.get_trefle().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "frunza":
+                    game.get_trei().pop()
+                    element.set_new_range(game.get_frunze_deck().get_x1(), game.get_frunze_deck().get_y1(),
+                                         game.get_frunze_deck().get_x2(), game.get_frunze_deck().get_y2())
+                    game.get_frunze().append(element)
+                    ok = True
+            else:
+                if len(game.get_inimi()) > 0 and ok == False:
+                    if element.return_symbol() == "inima" and element.retrun_value() == game.get_inimi()[-1].retrun_value() + 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_inimi_deck().get_x1(), game.get_inimi_deck().get_y1(),
+                                              game.get_inimi_deck().get_x2(), game.get_inimi_deck().get_y2())
+                        game.get_inimi().append(element)
+                        ok = True
+
+                if len(game.get_romburi()) > 0 and ok == False:
+                    if element.return_symbol() == "romb" and element.retrun_value() == game.get_romburi()[-1].retrun_value() + 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_romburi_deck().get_x1(),
+                                               game.get_romburi_deck().get_y1(),
+                                               game.get_romburi_deck().get_x2(),
+                                               game.get_romburi_deck().get_y2())
+                        game.get_romburi().append(element)
+                        ok = True
+
+                if len(game.get_trefle()) > 0 and ok == False:
+                    if element.return_symbol() == "trefla" and element.retrun_value() == game.get_trefle()[-1].retrun_value() + 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_trefle_deck().get_x1(), game.get_trefle_deck().get_y1(),
+                                              game.get_trefle_deck().get_x2(), game.get_trefle_deck().get_y2())
+                        game.get_trefle().append(element)
+                        ok = True
+                if len(game.get_frunze()) > 0 and ok == False:
+                    if element.return_symbol() == "frunza" and element.retrun_value() == game.get_frunze()[-1].retrun_value() + 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_frunze_deck().get_x1(), game.get_frunze_deck().get_y1(),
+                                              game.get_frunze_deck().get_x2(), game.get_frunze_deck().get_y2())
+                        game.get_frunze().append(element)
+                        ok = True
+
+                if len(game.get_unu()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_unu()[-1].return_color() == "negru" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(),
+                                                         game.get_unu()[-1].get_y1(),
+                                                         game.get_unu()[-1].get_x2(),
+                                                         game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_unu()[-1].return_color() == "rosu" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(),
+                                                         game.get_unu()[-1].get_y1(),
+                                                         game.get_unu()[-1].get_x2(),
+                                                         game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(element)
+                        ok = True
+
+                elif len(game.get_unu()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_trei().pop()
+                    element.set_new_range(game.get_unu_deck().get_x1(), game.get_unu_deck().get_y1(),
+                                          game.get_unu_deck().get_x2(), game.get_unu_deck().get_y2())
+                    game.get_unu().append(element)
+                    ok = True
+                if len(game.get_doi()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_doi()[-1].return_color() == "negru" and element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                              game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(),
+                                                          game.get_doi()[-1].get_y1(),
+                                                          game.get_doi()[-1].get_x2(),
+                                                          game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_doi()[-1].return_color() == "rosu" and element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                              game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(),
+                                                          game.get_doi()[-1].get_y1(),
+                                                          game.get_doi()[-1].get_x2(),
+                                                          game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(element)
+                        ok = True
+
+                elif len(game.get_doi()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_trei().pop()
+                    element.set_new_range(game.get_doi_deck().get_x1(), game.get_doi_deck().get_y1(),
+                                          game.get_doi_deck().get_x2(), game.get_doi_deck().get_y2())
+                    game.get_doi().append(element)
+                    ok = True
+
+                if len(game.get_patru()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_patru()[-1].return_color() == "negru" and element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                              game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(),
+                                                           game.get_patru()[-1].get_y1(),
+                                                           game.get_patru()[-1].get_x2(),
+                                                           game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_patru()[-1].return_color() == "rosu" and element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                              game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(),
+                                                           game.get_patru()[-1].get_y1(),
+                                                           game.get_patru()[-1].get_x2(),
+                                                           game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(element)
+                        ok = True
+
+                elif len(game.get_patru()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_trei().pop()
+                    element.set_new_range(game.get_patru_deck().get_x1(), game.get_patru_deck().get_x2(),
+                                          game.get_patru_deck().get_y1(), game.get_patru_deck().get_y2())
+                    game.get_patru().append(element)
+                    ok = True
+
+                if len(game.get_cinci()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_cinci()[-1].return_color() == "negru" and element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                              game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(),
+                                                           game.get_cinci()[-1].get_y1(),
+                                                           game.get_cinci()[-1].get_x2(),
+                                                           game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_cinci()[-1].return_color() == "rosu" and element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                              game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(),
+                                                           game.get_cinci()[-1].get_y1(),
+                                                           game.get_cinci()[-1].get_x2(),
+                                                           game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(element)
+                        ok = True
+
+                elif len(game.get_cinci()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_trei().pop()
+                    element.set_new_range(game.get_cinci_deck().get_x1(), game.get_cinci_deck().get_y1(),
+                                          game.get_cinci_deck().get_x2(), game.get_cinci_deck().get_y2())
+                    game.get_cinci().append(element)
+                    ok = True
+
+                if len(game.get_sase()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_sase()[-1].return_color() == "negru" and element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                              game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(),
+                                                          game.get_sase()[-1].get_y1(),
+                                                          game.get_sase()[-1].get_x2(),
+                                                          game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_sase()[-1].return_color() == "rosu" and element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                              game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(),
+                                                          game.get_sase()[-1].get_y1(),
+                                                          game.get_sase()[-1].get_x2(),
+                                                          game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(element)
+                        ok = True
+
+                elif len(game.get_sase()) == 0 and ok == False and element.retrun_value() == 13:
+                     game.get_trei().pop()
+                     element.set_new_range(game.get_sase_deck().get_x1(), game.get_sase_deck().get_y1(),
+                                           game.get_sase_deck().get_x2(), game.get_sase_deck().get_y2())
+                     game.get_sase().append(element)
+                     ok = True
+
+                if len(game.get_sapte()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_sapte()[-1].return_color() == "negru" and element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                              game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                        game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(),
+                                                           game.get_sapte()[-1].get_y1(),
+                                                           game.get_sapte()[-1].get_x2(),
+                                                           game.get_sapte()[-1].get_y1() + 44)
+                        game.get_sapte().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_sapte()[-1].return_color() == "rosu" and element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                              game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                        game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(),
+                                                          game.get_sapte()[-1].get_y1(),
+                                                          game.get_sapte()[-1].get_x2(),
+                                                          game.get_sapte()[-1].get_y1() + 44)
+                        game.get_sapte().append(element)
+                        ok = True
+
+                elif len(game.get_sapte()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_trei().pop()
+                    element.set_new_range(game.get_sapte_deck().get_x1(), game.get_sapte_deck().get_y1(),
+                                          game.get_sapte_deck().get_x2(), game.get_sapte_deck().get_y2())
+                    game.get_sapte().append(element)
+        else:
+            print("Suntem aici")
+            rezerva = []
+            while index < len(game.get_trei()):
+                rezerva.append(game.get_trei().pop())
+            print(rezerva)
+            ok = False
+            if len(game.get_unu())>0:
+                if rezerva[-1].retrun_value() == game.get_unu()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_unu()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                            game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(rezerva.pop())
+                    ok = True
+
+            elif len(rezerva) > 0:
+                if len(game.get_unu()) == 0 and rezerva[-1].retrun_value() == 13:
+                    rezerva[-1].set_new_range(game.get_unu_deck().get_x1(), game.get_unu_deck().get_y1(),
+                                                  game.get_unu_deck().get_x2(), game.get_unu_deck().get_y2())
+                    game.get_unu().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                                  game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                                        game.get_unu()[-1].get_x2(),
+                                                        game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_doi())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_doi()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_doi()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                             game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                              game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(rezerva.pop())
+                    ok = True
+
+            elif len(rezerva) > 0:
+                if len(game.get_doi()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_doi_deck().get_x1(), game.get_doi_deck().get_y1(),
+                                                  game.get_doi_deck().get_x2(), game.get_doi_deck().get_y2())
+                    game.get_doi().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                                  game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                                        game.get_doi()[-1].get_x2(),
+                                                        game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_patru())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_patru()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_patru()[-1].return_color():
+                   while len(rezerva) > 0:
+                       rezerva[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                            game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                       game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                             game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y1() + 44)
+                       game.get_patru().append(rezerva.pop())
+                   ok = True
+
+            elif len(rezerva) > 0:
+                if len(game.get_patru()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_patru_deck().get_x1(), game.get_patru_deck().get_y1(),
+                                                  game.get_patru_deck().get_x2(), game.get_patru_deck().get_y2())
+                    game.get_patru().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                                  game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                                        game.get_patru()[-1].get_x2(),
+                                                        game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_cinci())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_cinci()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_cinci()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                            game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                             game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_cinci()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_cinci_deck().get_x1(), game.get_cinci_deck().get_y1(),
+                                                 game.get_cinci_deck().get_x2(), game.get_cinci_deck().get_y2())
+                    game.get_cinci().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                                  game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                                        game.get_cinci()[-1].get_x2(),
+                                                        game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_sase())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_sase()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_sase()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                             game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                              game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_sase()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_sase_deck().get_x1(), game.get_sase_deck().get_y1(),
+                                                  game.get_sase_deck().get_x2(), game.get_sase_deck().get_y2())
+                    game.get_sase().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                                  game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                                        game.get_sase()[-1].get_x2(),
+                                                        game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_sapte())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_sapte()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_sapte()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                            game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                        game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                             game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y1() + 44)
+                        game.get_sapte().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_sapte()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_sapte_deck().get_x1(), game.get_sapte_deck().get_y1(),
+                                                  game.get_sapte_deck().get_x2(), game.get_sapte_deck().get_y2())
+                    game.get_sapte().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                         rezerva[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                                  game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                         game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                                        game.get_sapte()[-1].get_x2(),
+                                                        game.get_sapte()[-1].get_y1() + 44)
+                         game.get_sapte().append(rezerva.pop())
+                    ok = True
+            if ok == False :
+                while len(rezerva) > 0:
+                   game.get_trei().append(rezerva.pop())
+        if len(game.get_trei()) > 0:
+            game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                              game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y1() + 200)
+            if game.get_trei()[-1].return_hide():
+                game.get_trei()[-1].change_hide()
+
+def make_patru_move(game,x,y):
+    if len(game.get_patru()) > 0:
+        n = range(0,len(game.get_patru()))
+        index = 0
+        for i in n:
+            x1 = game.get_patru()[i].get_x1()
+            x2 = game.get_patru()[i].get_x2()
+            y1 = game.get_patru()[i].get_y1()
+            y2 = game.get_patru()[i].get_y2()
+            hide = game.get_patru()[i].return_hide()
+            if x <= x2 and x >= x1 and y <= y2 and y >= y1 and hide == False:
+                index = i
+                break
+        single_card = False
+        if y2 - y1 > 44:
+            single_card = True
+        if single_card:
+            print("O carte")
+            element = game.get_patru()[-1]
+            ok = False
+            if element.retrun_value() == 1:
+                if element.return_symbol() == "inima":
+                    game.get_patru().pop()
+                    element.set_new_range(game.get_inimi_deck().get_x1(), game.get_inimi_deck().get_y1(),
+                                         game.get_inimi_deck().get_x2(), game.get_inimi_deck().get_y2())
+                    game.get_inimi().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "romb":
+                    game.get_patru().pop()
+                    element.set_new_range(game.get_romburi_deck().get_x1(), game.get_romburi_deck().get_y1(),
+                                         game.get_romburi_deck().get_x2(), game.get_romburi_deck().get_y2())
+                    game.get_romburi().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "trefla":
+                    game.get_patru().pop()
+                    element.set_new_range(game.get_trefle_deck().get_x1(), game.get_trefle_deck().get_y1(),
+                                         game.get_trefle_deck().get_x2(), game.get_trefle_deck().get_y2())
+                    game.get_trefle().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "frunza":
+                    game.get_patru().pop()
+                    element.set_new_range(game.get_frunze_deck().get_x1(), game.get_frunze_deck().get_y1(),
+                                         game.get_frunze_deck().get_x2(), game.get_frunze_deck().get_y2())
+                    game.get_frunze().append(element)
+                    ok = True
+            else:
+                if len(game.get_inimi()) > 0 and ok == False:
+                    if element.return_symbol() == "inima" and element.retrun_value() == game.get_inimi()[-1].retrun_value() + 1:
+                        game.get_patru().pop()
+                        element.set_new_range(game.get_inimi_deck().get_x1(), game.get_inimi_deck().get_y1(),
+                                              game.get_inimi_deck().get_x2(), game.get_inimi_deck().get_y2())
+                        game.get_inimi().append(element)
+                        ok = True
+
+                if len(game.get_romburi()) > 0 and ok == False:
+                    if element.return_symbol() == "romb" and element.retrun_value() == game.get_romburi()[-1].retrun_value() + 1:
+                        game.get_patru().pop()
+                        element.set_new_range(game.get_romburi_deck().get_x1(),
+                                               game.get_romburi_deck().get_y1(),
+                                               game.get_romburi_deck().get_x2(),
+                                               game.get_romburi_deck().get_y2())
+                        game.get_romburi().append(element)
+                        ok = True
+
+                if len(game.get_trefle()) > 0 and ok == False:
+                    if element.return_symbol() == "trefla" and element.retrun_value() == game.get_trefle()[-1].retrun_value() + 1:
+                        game.get_patru().pop()
+                        element.set_new_range(game.get_trefle_deck().get_x1(), game.get_trefle_deck().get_y1(),
+                                              game.get_trefle_deck().get_x2(), game.get_trefle_deck().get_y2())
+                        game.get_trefle().append(element)
+                        ok = True
+                if len(game.get_frunze()) > 0 and ok == False:
+                    if element.return_symbol() == "frunza" and element.retrun_value() == game.get_frunze()[-1].retrun_value() + 1:
+                        game.get_patru().pop()
+                        element.set_new_range(game.get_frunze_deck().get_x1(), game.get_frunze_deck().get_y1(),
+                                              game.get_frunze_deck().get_x2(), game.get_frunze_deck().get_y2())
+                        game.get_frunze().append(element)
+                        ok = True
+
+                if len(game.get_unu()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_unu()[-1].return_color() == "negru" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                        game.get_patru().pop()
+                        element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(),
+                                                         game.get_unu()[-1].get_y1(),
+                                                         game.get_unu()[-1].get_x2(),
+                                                         game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_unu()[-1].return_color() == "rosu" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                        game.get_patru().pop()
+                        element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(),
+                                                         game.get_unu()[-1].get_y1(),
+                                                         game.get_unu()[-1].get_x2(),
+                                                         game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(element)
+                        ok = True
+
+                elif len(game.get_unu()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_patru().pop()
+                    element.set_new_range(game.get_unu_deck().get_x1(), game.get_unu_deck().get_y1(),
+                                          game.get_unu_deck().get_x2(), game.get_unu_deck().get_y2())
+                    game.get_unu().append(element)
+                    ok = True
+                if len(game.get_doi()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_doi()[-1].return_color() == "negru" and element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                        game.get_patru().pop()
+                        element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                              game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(),
+                                                          game.get_doi()[-1].get_y1(),
+                                                          game.get_doi()[-1].get_x2(),
+                                                          game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_doi()[-1].return_color() == "rosu" and element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                        game.get_patru().pop()
+                        element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                              game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(),
+                                                          game.get_doi()[-1].get_y1(),
+                                                          game.get_doi()[-1].get_x2(),
+                                                          game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(element)
+                        ok = True
+
+                elif len(game.get_doi()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_patru().pop()
+                    element.set_new_range(game.get_doi_deck().get_x1(), game.get_doi_deck().get_y1(),
+                                          game.get_doi_deck().get_x2(), game.get_doi_deck().get_y2())
+                    game.get_doi().append(element)
+                    ok = True
+
+                if len(game.get_trei()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_trei()[-1].return_color() == "negru" and element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                        game.get_trei().pop()
+                        element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                              game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(),
+                                                           game.get_trei()[-1].get_y1(),
+                                                           game.get_trei()[-1].get_x2(),
+                                                           game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_trei()[-1].return_color() == "rosu" and element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                        game.get_patru().pop()
+                        element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                              game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(),
+                                                           game.get_trei()[-1].get_y1(),
+                                                           game.get_trei()[-1].get_x2(),
+                                                           game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(element)
+                        ok = True
+
+                elif len(game.get_trei()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_patru().pop()
+                    element.set_new_range(game.get_trei_deck().get_x1(), game.get_trei_deck().get_y1(),
+                                          game.get_trei_deck().get_x2(), game.get_patru_deck().get_y2())
+                    game.get_trei().append(element)
+                    ok = True
+
+                if len(game.get_cinci()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_cinci()[-1].return_color() == "negru" and element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                        game.get_patru().pop()
+                        element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                              game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(),
+                                                           game.get_cinci()[-1].get_y1(),
+                                                           game.get_cinci()[-1].get_x2(),
+                                                           game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_cinci()[-1].return_color() == "rosu" and element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                        game.get_patru().pop()
+                        element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                              game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(),
+                                                           game.get_cinci()[-1].get_y1(),
+                                                           game.get_cinci()[-1].get_x2(),
+                                                           game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(element)
+                        ok = True
+
+                elif len(game.get_cinci()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_patru().pop()
+                    element.set_new_range(game.get_cinci_deck().get_x1(), game.get_cinci_deck().get_y1(),
+                                          game.get_cinci_deck().get_x2(), game.get_cinci_deck().get_y2())
+                    game.get_cinci().append(element)
+                    ok = True
+
+                if len(game.get_sase()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_sase()[-1].return_color() == "negru" and element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                        game.get_patru().pop()
+                        element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                              game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(),
+                                                          game.get_sase()[-1].get_y1(),
+                                                          game.get_sase()[-1].get_x2(),
+                                                          game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_sase()[-1].return_color() == "rosu" and element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                        game.get_patru().pop()
+                        element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                              game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(),
+                                                          game.get_sase()[-1].get_y1(),
+                                                          game.get_sase()[-1].get_x2(),
+                                                          game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(element)
+                        ok = True
+
+                elif len(game.get_sase()) == 0 and ok == False and element.retrun_value() == 13:
+                     game.get_patru().pop()
+                     element.set_new_range(game.get_sase_deck().get_x1(), game.get_sase_deck().get_y1(),
+                                           game.get_sase_deck().get_x2(), game.get_sase_deck().get_y2())
+                     game.get_sase().append(element)
+                     ok = True
+
+                if len(game.get_sapte()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_sapte()[-1].return_color() == "negru" and element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                        game.get_patru().pop()
+                        element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                              game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                        game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(),
+                                                           game.get_sapte()[-1].get_y1(),
+                                                           game.get_sapte()[-1].get_x2(),
+                                                           game.get_sapte()[-1].get_y1() + 44)
+                        game.get_sapte().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_sapte()[-1].return_color() == "rosu" and element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                        game.get_patru().pop()
+                        element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                              game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                        game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(),
+                                                          game.get_sapte()[-1].get_y1(),
+                                                          game.get_sapte()[-1].get_x2(),
+                                                          game.get_sapte()[-1].get_y1() + 44)
+                        game.get_sapte().append(element)
+                        ok = True
+
+                elif len(game.get_sapte()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_patru().pop()
+                    element.set_new_range(game.get_sapte_deck().get_x1(), game.get_sapte_deck().get_y1(),
+                                          game.get_sapte_deck().get_x2(), game.get_sapte_deck().get_y2())
+                    game.get_sapte().append(element)
+        else:
+            print("Suntem aici")
+            rezerva = []
+            while index < len(game.get_patru()):
+                rezerva.append(game.get_patru().pop())
+            print(rezerva)
+            ok = False
+            if len(game.get_unu())>0:
+                if rezerva[-1].retrun_value() == game.get_unu()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_unu()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                            game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_unu()) == 0 and rezerva[-1].retrun_value() == 13:
+                    rezerva[-1].set_new_range(game.get_unu_deck().get_x1(), game.get_unu_deck().get_y1(),
+                                                  game.get_unu_deck().get_x2(), game.get_unu_deck().get_y2())
+                    game.get_unu().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                                  game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                                        game.get_unu()[-1].get_x2(),
+                                                        game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_doi())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_doi()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_doi()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                             game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                              game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(rezerva.pop())
+                    ok = True
+
+            elif len(rezerva) > 0:
+                if len(game.get_doi()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_doi_deck().get_x1(), game.get_doi_deck().get_y1(),
+                                                  game.get_doi_deck().get_x2(), game.get_doi_deck().get_y2())
+                    game.get_doi().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                                  game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                                        game.get_doi()[-1].get_x2(),
+                                                        game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_trei())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_trei()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_trei()[-1].return_color():
+                   while len(rezerva) > 0:
+                       rezerva[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                            game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                       game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                             game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y1() + 44)
+                       game.get_trei().append(rezerva.pop())
+                   ok = True
+
+            elif len(rezerva) > 0:
+                if len(game.get_trei()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_trei_deck().get_x1(), game.get_trei_deck().get_y1(),
+                                                  game.get_trei_deck().get_x2(), game.get_trei_deck().get_y2())
+                    game.get_trei().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                                  game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                                        game.get_trei()[-1].get_x2(),
+                                                        game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_cinci())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_cinci()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_cinci()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                            game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                             game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_cinci()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_cinci_deck().get_x1(), game.get_cinci_deck().get_y1(),
+                                                     game.get_cinci_deck().get_x2(), game.get_cinci_deck().get_y2())
+                    game.get_cinci().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                                      game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                                            game.get_cinci()[-1].get_x2(),
+                                                            game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_sase())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_sase()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_sase()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                             game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                              game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_sase()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_sase_deck().get_x1(), game.get_sase_deck().get_y1(),
+                                                  game.get_sase_deck().get_x2(), game.get_sase_deck().get_y2())
+                    game.get_sase().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                                  game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                                        game.get_sase()[-1].get_x2(),
+                                                        game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_sapte())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_sapte()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_sapte()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                            game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                        game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                             game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y1() + 44)
+                        game.get_sapte().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_sapte()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_sapte_deck().get_x1(), game.get_sapte_deck().get_y1(),
+                                                  game.get_sapte_deck().get_x2(), game.get_sapte_deck().get_y2())
+                    game.get_sapte().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                         rezerva[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                                  game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                         game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                                        game.get_sapte()[-1].get_x2(),
+                                                        game.get_sapte()[-1].get_y1() + 44)
+                         game.get_sapte().append(rezerva.pop())
+                    ok = True
+
+            if ok == False :
+                while len(rezerva) > 0:
+                   game.get_patru().append(rezerva.pop())
+
+        if len(game.get_patru()) > 0:
+            game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                               game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y1() + 200)
+            if game.get_patru()[-1].return_hide():
+                game.get_patru()[-1].change_hide()
+
+def make_cinci_move(game,x,y):
+    if len(game.get_cinci()) > 0:
+        n = range(0,len(game.get_cinci()))
+        index = 0
+        for i in n:
+            x1 = game.get_cinci()[i].get_x1()
+            x2 = game.get_cinci()[i].get_x2()
+            y1 = game.get_cinci()[i].get_y1()
+            y2 = game.get_cinci()[i].get_y2()
+            hide = game.get_cinci()[i].return_hide()
+            if x <= x2 and x >= x1 and y <= y2 and y >= y1 and hide == False:
+                index = i
+                break
+        single_card = False
+        if y2 - y1 > 44:
+            single_card = True
+        if single_card:
+            print("O carte")
+            element = game.get_cinci()[-1]
+            ok = False
+            if element.retrun_value() == 1:
+                if element.return_symbol() == "inima":
+                    game.get_cinci().pop()
+                    element.set_new_range(game.get_inimi_deck().get_x1(), game.get_inimi_deck().get_y1(),
+                                         game.get_inimi_deck().get_x2(), game.get_inimi_deck().get_y2())
+                    game.get_inimi().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "romb":
+                    game.get_cinci().pop()
+                    element.set_new_range(game.get_romburi_deck().get_x1(), game.get_romburi_deck().get_y1(),
+                                         game.get_romburi_deck().get_x2(), game.get_romburi_deck().get_y2())
+                    game.get_romburi().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "trefla":
+                    game.get_cinci().pop()
+                    element.set_new_range(game.get_trefle_deck().get_x1(), game.get_trefle_deck().get_y1(),
+                                         game.get_trefle_deck().get_x2(), game.get_trefle_deck().get_y2())
+                    game.get_trefle().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "frunza":
+                    game.get_cinci().pop()
+                    element.set_new_range(game.get_frunze_deck().get_x1(), game.get_frunze_deck().get_y1(),
+                                         game.get_frunze_deck().get_x2(), game.get_frunze_deck().get_y2())
+                    game.get_frunze().append(element)
+                    ok = True
+            else:
+                if len(game.get_inimi()) > 0 and ok == False:
+                    if element.return_symbol() == "inima" and element.retrun_value() == game.get_inimi()[-1].retrun_value() + 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_inimi_deck().get_x1(), game.get_inimi_deck().get_y1(),
+                                              game.get_inimi_deck().get_x2(), game.get_inimi_deck().get_y2())
+                        game.get_inimi().append(element)
+                        ok = True
+
+                if len(game.get_romburi()) > 0 and ok == False:
+                    if element.return_symbol() == "romb" and element.retrun_value() == game.get_romburi()[-1].retrun_value() + 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_romburi_deck().get_x1(),
+                                               game.get_romburi_deck().get_y1(),
+                                               game.get_romburi_deck().get_x2(),
+                                               game.get_romburi_deck().get_y2())
+                        game.get_romburi().append(element)
+                        ok = True
+
+                if len(game.get_trefle()) > 0 and ok == False:
+                    if element.return_symbol() == "trefla" and element.retrun_value() == game.get_trefle()[-1].retrun_value() + 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_trefle_deck().get_x1(), game.get_trefle_deck().get_y1(),
+                                              game.get_trefle_deck().get_x2(), game.get_trefle_deck().get_y2())
+                        game.get_trefle().append(element)
+                        ok = True
+                if len(game.get_frunze()) > 0 and ok == False:
+                    if element.return_symbol() == "frunza" and element.retrun_value() == game.get_frunze()[-1].retrun_value() + 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_frunze_deck().get_x1(), game.get_frunze_deck().get_y1(),
+                                              game.get_frunze_deck().get_x2(), game.get_frunze_deck().get_y2())
+                        game.get_frunze().append(element)
+                        ok = True
+
+                if len(game.get_unu()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_unu()[-1].return_color() == "negru" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(),
+                                                         game.get_unu()[-1].get_y1(),
+                                                         game.get_unu()[-1].get_x2(),
+                                                         game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_unu()[-1].return_color() == "rosu" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(),
+                                                         game.get_unu()[-1].get_y1(),
+                                                         game.get_unu()[-1].get_x2(),
+                                                         game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(element)
+                        ok = True
+
+                elif len(game.get_unu()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_cinci().pop()
+                    element.set_new_range(game.get_unu_deck().get_x1(), game.get_unu_deck().get_y1(),
+                                          game.get_unu_deck().get_x2(), game.get_unu_deck().get_y2())
+                    game.get_unu().append(element)
+                    ok = True
+                if len(game.get_doi()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_doi()[-1].return_color() == "negru" and element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                              game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(),
+                                                          game.get_doi()[-1].get_y1(),
+                                                          game.get_doi()[-1].get_x2(),
+                                                          game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_doi()[-1].return_color() == "rosu" and element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                              game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(),
+                                                          game.get_doi()[-1].get_y1(),
+                                                          game.get_doi()[-1].get_x2(),
+                                                          game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(element)
+                        ok = True
+
+                elif len(game.get_doi()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_cinci().pop()
+                    element.set_new_range(game.get_doi_deck().get_x1(), game.get_doi_deck().get_y1(),
+                                          game.get_doi_deck().get_x2(), game.get_doi_deck().get_y2())
+                    game.get_doi().append(element)
+                    ok = True
+
+                if len(game.get_trei()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_trei()[-1].return_color() == "negru" and element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                              game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(),
+                                                           game.get_trei()[-1].get_y1(),
+                                                           game.get_trei()[-1].get_x2(),
+                                                           game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_trei()[-1].return_color() == "rosu" and element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                              game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(),
+                                                           game.get_trei()[-1].get_y1(),
+                                                           game.get_trei()[-1].get_x2(),
+                                                           game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(element)
+                        ok = True
+
+                elif len(game.get_trei()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_cinci().pop()
+                    element.set_new_range(game.get_trei_deck().get_x1(), game.get_trei_deck().get_y1(),
+                                          game.get_trei_deck().get_x2(), game.get_trei_deck().get_y2())
+                    game.get_trei().append(element)
+                    ok = True
+
+                if len(game.get_patru()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_patru()[-1].return_color() == "negru" and element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                              game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(),
+                                                           game.get_patru()[-1].get_y1(),
+                                                           game.get_patru()[-1].get_x2(),
+                                                           game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_patru()[-1].return_color() == "rosu" and element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                              game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(),
+                                                           game.get_patru()[-1].get_y1(),
+                                                           game.get_patru()[-1].get_x2(),
+                                                           game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(element)
+                        ok = True
+
+                elif len(game.get_patru()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_cinci().pop()
+                    element.set_new_range(game.get_patru_deck().get_x1(), game.get_patru_deck().get_y1(),
+                                          game.get_patru_deck().get_x2(), game.get_patru_deck().get_y2())
+                    game.get_patru().append(element)
+                    ok = True
+
+                if len(game.get_sase()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_sase()[-1].return_color() == "negru" and element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                              game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(),
+                                                          game.get_sase()[-1].get_y1(),
+                                                          game.get_sase()[-1].get_x2(),
+                                                          game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_sase()[-1].return_color() == "rosu" and element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                              game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(),
+                                                          game.get_sase()[-1].get_y1(),
+                                                          game.get_sase()[-1].get_x2(),
+                                                          game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(element)
+                        ok = True
+
+                elif len(game.get_sase()) == 0 and ok == False and element.retrun_value() == 13:
+                     game.get_cinci().pop()
+                     element.set_new_range(game.get_sase_deck().get_x1(), game.get_sase_deck().get_y1(),
+                                           game.get_sase_deck().get_x2(), game.get_sase_deck().get_y2())
+                     game.get_sase().append(element)
+                     ok = True
+
+                if len(game.get_sapte()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_sapte()[-1].return_color() == "negru" and element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                              game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                        game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(),
+                                                           game.get_sapte()[-1].get_y1(),
+                                                           game.get_sapte()[-1].get_x2(),
+                                                           game.get_sapte()[-1].get_y1() + 44)
+                        game.get_sapte().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_sapte()[-1].return_color() == "rosu" and element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                        game.get_cinci().pop()
+                        element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                              game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                        game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(),
+                                                          game.get_sapte()[-1].get_y1(),
+                                                          game.get_sapte()[-1].get_x2(),
+                                                          game.get_sapte()[-1].get_y1() + 44)
+                        game.get_sapte().append(element)
+                        ok = True
+
+                elif len(game.get_sapte()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_cinci().pop()
+                    element.set_new_range(game.get_sapte_deck().get_x1(), game.get_sapte_deck().get_y1(),
+                                          game.get_sapte_deck().get_x2(), game.get_sapte_deck().get_y2())
+                    game.get_sapte().append(element)
+        else:
+            print("Suntem aici")
+            rezerva = []
+            while index < len(game.get_cinci()):
+                rezerva.append(game.get_cinci().pop())
+            print(rezerva)
+            ok = False
+            if len(game.get_unu())>0:
+                if rezerva[-1].retrun_value() == game.get_unu()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_unu()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                            game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(rezerva.pop())
+                    ok = True
+
+
+            elif len(rezerva) > 0:
+                if len(game.get_unu()) == 0 and rezerva[-1].retrun_value() == 13:
+                    rezerva[-1].set_new_range(game.get_unu_deck().get_x1(), game.get_unu_deck().get_y1(),
+                                                  game.get_unu_deck().get_x2(), game.get_unu_deck().get_y2())
+                    game.get_unu().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                                  game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                                        game.get_unu()[-1].get_x2(),
+                                                        game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_doi())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_doi()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_doi()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                             game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                              game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(rezerva.pop())
+                    ok = True
+
+
+            elif len(rezerva) > 0:
+                if len(game.get_doi()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_doi_deck().get_x1(), game.get_doi_deck().get_y1(),
+                                                  game.get_doi_deck().get_x2(), game.get_doi_deck().get_y2())
+                    game.get_doi().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                                  game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                                        game.get_doi()[-1].get_x2(),
+                                                        game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_trei())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_trei()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_trei()[-1].return_color():
+                   while len(rezerva) > 0:
+                       rezerva[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                            game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                       game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                             game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y1() + 44)
+                       game.get_trei().append(rezerva.pop())
+                   ok = True
+
+
+            elif len(rezerva) > 0:
+                if len(game.get_trei()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_trei_deck().get_x1(), game.get_trei_deck().get_y1(),
+                                                  game.get_trei_deck().get_x2(), game.get_trei_deck().get_y2())
+                    game.get_trei().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                                  game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                                        game.get_trei()[-1].get_x2(),
+                                                        game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_patru())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_patru()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_patru()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                            game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                             game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_patru()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_patru_deck().get_x1(), game.get_patru_deck().get_y1(),
+                                                 game.get_patru_deck().get_x2(), game.get_patru_deck().get_y2())
+                    game.get_patru().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                                  game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                                        game.get_patru()[-1].get_x2(),
+                                                        game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_sase())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_sase()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_sase()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                             game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                              game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_sase()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_sase_deck().get_x1(), game.get_sase_deck().get_y1(),
+                                                  game.get_sase_deck().get_x2(), game.get_sase_deck().get_y2())
+                    game.get_sase().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                                  game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                                        game.get_sase()[-1].get_x2(),
+                                                        game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_sapte())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_sapte()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_sapte()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                            game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                        game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                             game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y1() + 44)
+                        game.get_sapte().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_sapte()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_sapte_deck().get_x1(), game.get_sapte_deck().get_y1(),
+                                                  game.get_sapte_deck().get_x2(), game.get_sapte_deck().get_y2())
+                    game.get_sapte().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                         rezerva[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                                  game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                         game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                                        game.get_sapte()[-1].get_x2(),
+                                                        game.get_sapte()[-1].get_y1() + 44)
+                         game.get_sapte().append(rezerva.pop())
+                    ok = True
+            if ok == False :
+                while len(rezerva) > 0:
+                   game.get_cinci().append(rezerva.pop())
+
+        if len(game.get_cinci()) > 0:
+            game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                               game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y1() + 200)
+            if game.get_cinci()[-1].return_hide():
+                game.get_cinci()[-1].change_hide()
+
+def make_sase_move(game,x,y):
+    if len(game.get_sase()) > 0:
+        n = range(0,len(game.get_sase()))
+        index = 0
+        for i in n:
+            x1 = game.get_sase()[i].get_x1()
+            x2 = game.get_sase()[i].get_x2()
+            y1 = game.get_sase()[i].get_y1()
+            y2 = game.get_sase()[i].get_y2()
+            hide = game.get_sase()[i].return_hide()
+            if x <= x2 and x >= x1 and y <= y2 and y >= y1 and hide == False:
+                index = i
+                break
+        single_card = False
+        if y2 - y1 > 44:
+            single_card = True
+        if single_card:
+            print("O carte")
+            element = game.get_sase()[-1]
+            ok = False
+            if element.retrun_value() == 1:
+                if element.return_symbol() == "inima":
+                    game.get_sase().pop()
+                    element.set_new_range(game.get_inimi_deck().get_x1(), game.get_inimi_deck().get_y1(),
+                                         game.get_inimi_deck().get_x2(), game.get_inimi_deck().get_y2())
+                    game.get_inimi().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "romb":
+                    game.get_sase().pop()
+                    element.set_new_range(game.get_romburi_deck().get_x1(), game.get_romburi_deck().get_y1(),
+                                         game.get_romburi_deck().get_x2(), game.get_romburi_deck().get_y2())
+                    game.get_romburi().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "trefla":
+                    game.get_sase().pop()
+                    element.set_new_range(game.get_trefle_deck().get_x1(), game.get_trefle_deck().get_y1(),
+                                         game.get_trefle_deck().get_x2(), game.get_trefle_deck().get_y2())
+                    game.get_trefle().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "frunza":
+                    game.get_sase().pop()
+                    element.set_new_range(game.get_frunze_deck().get_x1(), game.get_frunze_deck().get_y1(),
+                                         game.get_frunze_deck().get_x2(), game.get_frunze_deck().get_y2())
+                    game.get_frunze().append(element)
+                    ok = True
+            else:
+                if len(game.get_inimi()) > 0 and ok == False:
+                    if element.return_symbol() == "inima" and element.retrun_value() == game.get_inimi()[-1].retrun_value() + 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_inimi_deck().get_x1(), game.get_inimi_deck().get_y1(),
+                                              game.get_inimi_deck().get_x2(), game.get_inimi_deck().get_y2())
+                        game.get_inimi().append(element)
+                        ok = True
+
+                if len(game.get_romburi()) > 0 and ok == False:
+                    if element.return_symbol() == "romb" and element.retrun_value() == game.get_romburi()[-1].retrun_value() + 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_romburi_deck().get_x1(),
+                                               game.get_romburi_deck().get_y1(),
+                                               game.get_romburi_deck().get_x2(),
+                                               game.get_romburi_deck().get_y2())
+                        game.get_romburi().append(element)
+                        ok = True
+
+                if len(game.get_trefle()) > 0 and ok == False:
+                    if element.return_symbol() == "trefla" and element.retrun_value() == game.get_trefle()[-1].retrun_value() + 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_trefle_deck().get_x1(), game.get_trefle_deck().get_y1(),
+                                              game.get_trefle_deck().get_x2(), game.get_trefle_deck().get_y2())
+                        game.get_trefle().append(element)
+                        ok = True
+                if len(game.get_frunze()) > 0 and ok == False:
+                    if element.return_symbol() == "frunza" and element.retrun_value() == game.get_frunze()[-1].retrun_value() + 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_frunze_deck().get_x1(), game.get_frunze_deck().get_y1(),
+                                              game.get_frunze_deck().get_x2(), game.get_frunze_deck().get_y2())
+                        game.get_frunze().append(element)
+                        ok = True
+
+                if len(game.get_unu()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_unu()[-1].return_color() == "negru" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(),
+                                                         game.get_unu()[-1].get_y1(),
+                                                         game.get_unu()[-1].get_x2(),
+                                                         game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_unu()[-1].return_color() == "rosu" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(),
+                                                         game.get_unu()[-1].get_y1(),
+                                                         game.get_unu()[-1].get_x2(),
+                                                         game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(element)
+                        ok = True
+
+                elif len(game.get_unu()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_sase().pop()
+                    element.set_new_range(game.get_unu_deck().get_x1(), game.get_unu_deck().get_y1(),
+                                          game.get_unu_deck().get_x2(), game.get_unu_deck().get_y2())
+                    game.get_unu().append(element)
+                    ok = True
+                if len(game.get_doi()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_doi()[-1].return_color() == "negru" and element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                              game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(),
+                                                          game.get_doi()[-1].get_y1(),
+                                                          game.get_doi()[-1].get_x2(),
+                                                          game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_doi()[-1].return_color() == "rosu" and element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                              game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(),
+                                                          game.get_doi()[-1].get_y1(),
+                                                          game.get_doi()[-1].get_x2(),
+                                                          game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(element)
+                        ok = True
+
+                elif len(game.get_doi()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_sase().pop()
+                    element.set_new_range(game.get_doi_deck().get_x1(), game.get_doi_deck().get_y1(),
+                                          game.get_doi_deck().get_x2(), game.get_doi_deck().get_y2())
+                    game.get_doi().append(element)
+                    ok = True
+
+                if len(game.get_trei()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_trei()[-1].return_color() == "negru" and element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                              game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(),
+                                                           game.get_trei()[-1].get_y1(),
+                                                           game.get_trei()[-1].get_x2(),
+                                                           game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_trei()[-1].return_color() == "rosu" and element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                              game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(),
+                                                           game.get_trei()[-1].get_y1(),
+                                                           game.get_trei()[-1].get_x2(),
+                                                           game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(element)
+                        ok = True
+
+                elif len(game.get_trei()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_sase().pop()
+                    element.set_new_range(game.get_trei_deck().get_x1(), game.get_trei_deck().get_y1(),
+                                          game.get_trei_deck().get_x2(), game.get_trei_deck().get_y2())
+                    game.get_trei().append(element)
+                    ok = True
+
+                if len(game.get_patru()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_patru()[-1].return_color() == "negru" and element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                              game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(),
+                                                           game.get_patru()[-1].get_y1(),
+                                                           game.get_patru()[-1].get_x2(),
+                                                           game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_patru()[-1].return_color() == "rosu" and element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                              game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(),
+                                                           game.get_patru()[-1].get_y1(),
+                                                           game.get_patru()[-1].get_x2(),
+                                                           game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(element)
+                        ok = True
+
+                elif len(game.get_patru()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_sase().pop()
+                    element.set_new_range(game.get_patru_deck().get_x1(), game.get_patru_deck().get_y1(),
+                                          game.get_patru_deck().get_x2(), game.get_patru_deck().get_y2())
+                    game.get_patru().append(element)
+                    ok = True
+
+                if len(game.get_cinci()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_cinci()[-1].return_color() == "negru" and element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                              game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(),
+                                                          game.get_cinci()[-1].get_y1(),
+                                                          game.get_cinci()[-1].get_x2(),
+                                                          game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_cinci()[-1].return_color() == "rosu" and element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                              game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(),
+                                                          game.get_cinci()[-1].get_y1(),
+                                                          game.get_cinci()[-1].get_x2(),
+                                                          game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(element)
+                        ok = True
+
+                elif len(game.get_cinci()) == 0 and ok == False and element.retrun_value() == 13:
+                     game.get_sase().pop()
+                     element.set_new_range(game.get_cinci_deck().get_x1(), game.get_cinci_deck().get_y1(),
+                                           game.get_cinci_deck().get_x2(), game.get_cinci_deck().get_y2())
+                     game.get_cinci().append(element)
+                     ok = True
+
+                if len(game.get_sapte()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_sapte()[-1].return_color() == "negru" and element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                              game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                        game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(),
+                                                           game.get_sapte()[-1].get_y1(),
+                                                           game.get_sapte()[-1].get_x2(),
+                                                           game.get_sapte()[-1].get_y1() + 44)
+                        game.get_sapte().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_sapte()[-1].return_color() == "rosu" and element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                        game.get_sase().pop()
+                        element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                              game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                        game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(),
+                                                          game.get_sapte()[-1].get_y1(),
+                                                          game.get_sapte()[-1].get_x2(),
+                                                          game.get_sapte()[-1].get_y1() + 44)
+                        game.get_sapte().append(element)
+                        ok = True
+
+                elif len(game.get_sapte()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_sase().pop()
+                    element.set_new_range(game.get_sapte_deck().get_x1(), game.get_sapte_deck().get_y1(),
+                                          game.get_sapte_deck().get_x2(), game.get_sapte_deck().get_y2())
+                    game.get_sapte().append(element)
+        else:
+            print("Suntem aici")
+            rezerva = []
+            while index < len(game.get_sase()):
+                rezerva.append(game.get_sase().pop())
+            print(rezerva)
+            ok = False
+            if len(game.get_unu())>0:
+                if rezerva[-1].retrun_value() == game.get_unu()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_unu()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                            game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(rezerva.pop())
+                    ok = True
+
+            elif len(rezerva) > 0:
+                if len(game.get_unu()) == 0 and rezerva[-1].retrun_value() == 13:
+                    rezerva[-1].set_new_range(game.get_unu_deck().get_x1(), game.get_unu_deck().get_y1(),
+                                                  game.get_unu_deck().get_x2(), game.get_unu_deck().get_y2())
+                    game.get_unu().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                                  game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                                        game.get_unu()[-1].get_x2(),
+                                                        game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_doi())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_doi()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_doi()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                             game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                              game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(rezerva.pop())
+                    ok = True
+
+            elif len(rezerva) > 0:
+                if len(game.get_doi()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_doi_deck().get_x1(), game.get_doi_deck().get_y1(),
+                                                  game.get_doi_deck().get_x2(), game.get_doi_deck().get_y2())
+                    game.get_doi().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                                  game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                                        game.get_doi()[-1].get_x2(),
+                                                        game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_trei())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_trei()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_trei()[-1].return_color():
+                   while len(rezerva) > 0:
+                       rezerva[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                            game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                       game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                             game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y1() + 44)
+                       game.get_trei().append(rezerva.pop())
+                   ok = True
+
+            elif len(rezerva) > 0:
+                if len(game.get_trei()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_trei_deck().get_x1(), game.get_trei_deck().get_y1(),
+                                                  game.get_trei_deck().get_x2(), game.get_trei_deck().get_y2())
+                    game.get_trei().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                                  game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                                        game.get_trei()[-1].get_x2(),
+                                                        game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_patru())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_patru()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_patru()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                            game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                             game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_patru()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_patru_deck().get_x1(), game.get_patru_deck().get_y1(),
+                                                 game.get_patru_deck().get_x2(), game.get_patru_deck().get_y2())
+                    game.get_patru().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                                  game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                                        game.get_patru()[-1].get_x2(),
+                                                        game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_cinci())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_cinci()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_cinci()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                             game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                              game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_cinci()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_sase_deck().get_x1(), game.get_sase_deck().get_y1(),
+                                                  game.get_sase_deck().get_x2(), game.get_sase_deck().get_y2())
+                    game.get_cinci().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                                  game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                                        game.get_cinci()[-1].get_x2(),
+                                                        game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_sapte())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_sapte()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_sapte()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                            game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                        game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                             game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y1() + 44)
+                        game.get_sapte().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_sapte()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_sapte_deck().get_x1(), game.get_sapte_deck().get_y1(),
+                                                  game.get_sapte_deck().get_x2(), game.get_sapte_deck().get_y2())
+                    game.get_sapte().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                         rezerva[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                                  game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                         game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                                        game.get_sapte()[-1].get_x2(),
+                                                        game.get_sapte()[-1].get_y1() + 44)
+                         game.get_sapte().append(rezerva.pop())
+                    ok = True
+
+            if ok == False :
+                while len(rezerva) > 0:
+                   game.get_sase().append(rezerva.pop())
+
+        if len(game.get_sase()) > 0:
+            game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                               game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y1() + 200)
+            if game.get_sase()[-1].return_hide():
+                game.get_sase()[-1].change_hide()
+
+def make_sapte_move(game,x,y):
+    if len(game.get_sapte()) > 0:
+        n = range(0,len(game.get_sapte()))
+        index = 0
+        for i in n:
+            x1 = game.get_sapte()[i].get_x1()
+            x2 = game.get_sapte()[i].get_x2()
+            y1 = game.get_sapte()[i].get_y1()
+            y2 = game.get_sapte()[i].get_y2()
+            hide = game.get_sapte()[i].return_hide()
+            if x <= x2 and x >= x1 and y <= y2 and y >= y1 and hide == False:
+                index = i
+                break
+        single_card = False
+        print("Am intrat")
+        if y2 - y1 > 44:
+            single_card = True
+        if single_card:
+            print("O carte")
+            element = game.get_sapte()[-1]
+            ok = False
+            if element.retrun_value() == 1:
+                if element.return_symbol() == "inima":
+                    game.get_sapte().pop()
+                    element.set_new_range(game.get_inimi_deck().get_x1(), game.get_inimi_deck().get_y1(),
+                                         game.get_inimi_deck().get_x2(), game.get_inimi_deck().get_y2())
+                    game.get_inimi().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "romb":
+                    game.get_sapte().pop()
+                    element.set_new_range(game.get_romburi_deck().get_x1(), game.get_romburi_deck().get_y1(),
+                                         game.get_romburi_deck().get_x2(), game.get_romburi_deck().get_y2())
+                    game.get_romburi().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "trefla":
+                    game.get_sapte().pop()
+                    element.set_new_range(game.get_trefle_deck().get_x1(), game.get_trefle_deck().get_y1(),
+                                         game.get_trefle_deck().get_x2(), game.get_trefle_deck().get_y2())
+                    game.get_trefle().append(element)
+                    ok = True
+
+                elif element.return_symbol() == "frunza":
+                    game.get_sapte().pop()
+                    element.set_new_range(game.get_frunze_deck().get_x1(), game.get_frunze_deck().get_y1(),
+                                         game.get_frunze_deck().get_x2(), game.get_frunze_deck().get_y2())
+                    game.get_frunze().append(element)
+                    ok = True
+            else:
+                if len(game.get_inimi()) > 0 and ok == False:
+                    if element.return_symbol() == "inima" and element.retrun_value() == game.get_inimi()[-1].retrun_value() + 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_inimi_deck().get_x1(), game.get_inimi_deck().get_y1(),
+                                              game.get_inimi_deck().get_x2(), game.get_inimi_deck().get_y2())
+                        game.get_inimi().append(element)
+                        ok = True
+
+                if len(game.get_romburi()) > 0 and ok == False:
+                    if element.return_symbol() == "romb" and element.retrun_value() == game.get_romburi()[-1].retrun_value() + 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_romburi_deck().get_x1(),
+                                               game.get_romburi_deck().get_y1(),
+                                               game.get_romburi_deck().get_x2(),
+                                               game.get_romburi_deck().get_y2())
+                        game.get_romburi().append(element)
+                        ok = True
+
+                if len(game.get_trefle()) > 0 and ok == False:
+                    if element.return_symbol() == "trefla" and element.retrun_value() == game.get_trefle()[-1].retrun_value() + 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_trefle_deck().get_x1(), game.get_trefle_deck().get_y1(),
+                                              game.get_trefle_deck().get_x2(), game.get_trefle_deck().get_y2())
+                        game.get_trefle().append(element)
+                        ok = True
+                if len(game.get_frunze()) > 0 and ok == False:
+                    if element.return_symbol() == "frunza" and element.retrun_value() == game.get_frunze()[-1].retrun_value() + 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_frunze_deck().get_x1(), game.get_frunze_deck().get_y1(),
+                                              game.get_frunze_deck().get_x2(), game.get_frunze_deck().get_y2())
+                        game.get_frunze().append(element)
+                        ok = True
+
+                if len(game.get_unu()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_unu()[-1].return_color() == "negru" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(),
+                                                         game.get_unu()[-1].get_y1(),
+                                                         game.get_unu()[-1].get_x2(),
+                                                         game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_unu()[-1].return_color() == "rosu" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(),
+                                                         game.get_unu()[-1].get_y1(),
+                                                         game.get_unu()[-1].get_x2(),
+                                                         game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(element)
+                        ok = True
+
+                elif len(game.get_unu()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_sapte().pop()
+                    element.set_new_range(game.get_unu_deck().get_x1(), game.get_unu_deck().get_y1(),
+                                          game.get_unu_deck().get_x2(), game.get_unu_deck().get_y2())
+                    game.get_unu().append(element)
+                    ok = True
+                if len(game.get_doi()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_doi()[-1].return_color() == "negru" and element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                              game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(),
+                                                          game.get_doi()[-1].get_y1(),
+                                                          game.get_doi()[-1].get_x2(),
+                                                          game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_doi()[-1].return_color() == "rosu" and element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                              game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(),
+                                                          game.get_doi()[-1].get_y1(),
+                                                          game.get_doi()[-1].get_x2(),
+                                                          game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(element)
+                        ok = True
+
+                elif len(game.get_doi()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_sapte().pop()
+                    element.set_new_range(game.get_doi_deck().get_x1(), game.get_doi_deck().get_y1(),
+                                          game.get_doi_deck().get_x2(), game.get_doi_deck().get_y2())
+                    game.get_doi().append(element)
+                    ok = True
+
+                if len(game.get_trei()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_trei()[-1].return_color() == "negru" and element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                              game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(),
+                                                           game.get_trei()[-1].get_y1(),
+                                                           game.get_trei()[-1].get_x2(),
+                                                           game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_trei()[-1].return_color() == "rosu" and element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                              game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(),
+                                                           game.get_trei()[-1].get_y1(),
+                                                           game.get_trei()[-1].get_x2(),
+                                                           game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(element)
+                        ok = True
+
+                elif len(game.get_trei()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_sapte().pop()
+                    element.set_new_range(game.get_trei_deck().get_x1(), game.get_trei_deck().get_y1(),
+                                          game.get_trei_deck().get_x2(), game.get_trei_deck().get_y2())
+                    game.get_trei().append(element)
+                    ok = True
+
+                if len(game.get_patru()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_patru()[-1].return_color() == "negru" and element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                              game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(),
+                                                           game.get_patru()[-1].get_y1(),
+                                                           game.get_patru()[-1].get_x2(),
+                                                           game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_patru()[-1].return_color() == "rosu" and element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                              game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(),
+                                                           game.get_patru()[-1].get_y1(),
+                                                           game.get_patru()[-1].get_x2(),
+                                                           game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(element)
+                        ok = True
+
+                elif len(game.get_patru()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_sapte().pop()
+                    element.set_new_range(game.get_patru_deck().get_x1(), game.get_patru_deck().get_y1(),
+                                          game.get_patru_deck().get_x2(), game.get_patru_deck().get_y2())
+                    game.get_patru().append(element)
+                    ok = True
+
+                if len(game.get_cinci()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_cinci()[-1].return_color() == "negru" and element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                              game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(),
+                                                          game.get_cinci()[-1].get_y1(),
+                                                          game.get_cinci()[-1].get_x2(),
+                                                          game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_cinci()[-1].return_color() == "rosu" and element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                              game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(),
+                                                          game.get_cinci()[-1].get_y1(),
+                                                          game.get_cinci()[-1].get_x2(),
+                                                          game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(element)
+                        ok = True
+
+                elif len(game.get_cinci()) == 0 and ok == False and element.retrun_value() == 13:
+                     game.get_sapte().pop()
+                     element.set_new_range(game.get_cinci_deck().get_x1(), game.get_cinci_deck().get_y1(),
+                                           game.get_cinci_deck().get_x2(), game.get_cinci_deck().get_y2())
+                     game.get_cinci().append(element)
+                     ok = True
+
+                if len(game.get_sase()) > 0 and ok == False:
+                    if element.return_color() == "rosu" and game.get_sase()[-1].return_color() == "negru" and element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                              game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(),
+                                                           game.get_sase()[-1].get_y1(),
+                                                           game.get_sase()[-1].get_x2(),
+                                                           game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(element)
+                        ok = True
+
+                    elif element.return_color() == "negru" and game.get_sase()[-1].return_color() == "rosu" and element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                        game.get_sapte().pop()
+                        element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                              game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(),
+                                                          game.get_sase()[-1].get_y1(),
+                                                          game.get_sase()[-1].get_x2(),
+                                                          game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(element)
+                        ok = True
+
+                elif len(game.get_sase()) == 0 and ok == False and element.retrun_value() == 13:
+                    game.get_sapte().pop()
+                    element.set_new_range(game.get_sase_deck().get_x1(), game.get_sase_deck().get_y1(),
+                                          game.get_sase_deck().get_x2(), game.get_sase_deck().get_y2())
+                    game.get_sase().append(element)
+        else:
+            print("Suntem aici")
+            rezerva = []
+            while index < len(game.get_sapte()):
+                rezerva.append(game.get_sapte().pop())
+            print(rezerva)
+            ok = False
+            if len(game.get_unu())>0:
+                if rezerva[-1].retrun_value() == game.get_unu()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_unu()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                            game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                              game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(rezerva.pop())
+                    ok = True
+
+            elif len(rezerva) > 0:
+                if len(game.get_unu()) == 0 and rezerva[-1].retrun_value() == 13:
+                    rezerva[-1].set_new_range(game.get_unu_deck().get_x1(), game.get_unu_deck().get_y1(),
+                                                  game.get_unu_deck().get_x2(), game.get_unu_deck().get_y2())
+                    game.get_unu().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                                  game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                        game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                                        game.get_unu()[-1].get_x2(),
+                                                        game.get_unu()[-1].get_y1() + 44)
+                        game.get_unu().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_doi())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_doi()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_doi()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                             game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                              game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(rezerva.pop())
+                    ok = True
+
+            elif len(rezerva) > 0:
+                if len(game.get_doi()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_doi_deck().get_x1(), game.get_doi_deck().get_y1(),
+                                                  game.get_doi_deck().get_x2(), game.get_doi_deck().get_y2())
+                    game.get_doi().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                                  game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                        game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                                        game.get_doi()[-1].get_x2(),
+                                                        game.get_doi()[-1].get_y1() + 44)
+                        game.get_doi().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_trei())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_trei()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_trei()[-1].return_color():
+                   while len(rezerva) > 0:
+                       rezerva[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                            game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                       game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                             game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y1() + 44)
+                       game.get_trei().append(rezerva.pop())
+                   ok = True
+
+            elif len(rezerva) > 0:
+                if len(game.get_trei()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_trei_deck().get_x1(), game.get_trei_deck().get_y1(),
+                                                  game.get_trei_deck().get_x2(), game.get_trei_deck().get_y2())
+                    game.get_trei().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                                  game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                        game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                                        game.get_trei()[-1].get_x2(),
+                                                        game.get_trei()[-1].get_y1() + 44)
+                        game.get_trei().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_patru())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_patru()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_patru()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                            game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                             game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_patru()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_patru_deck().get_x1(), game.get_patru_deck().get_y1(),
+                                                 game.get_patru_deck().get_x2(), game.get_patru_deck().get_y2())
+                    game.get_patru().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                                  game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                        game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                                        game.get_patru()[-1].get_x2(),
+                                                        game.get_patru()[-1].get_y1() + 44)
+                        game.get_patru().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_cinci())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_cinci()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_cinci()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                             game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                              game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(rezerva.pop())
+                    ok = True
+
+            elif len(rezerva) > 0:
+                if len(game.get_cinci()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_sase_deck().get_x1(), game.get_sase_deck().get_y1(),
+                                                  game.get_sase_deck().get_x2(), game.get_sase_deck().get_y2())
+                    game.get_cinci().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                                  game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                        game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                                        game.get_cinci()[-1].get_x2(),
+                                                        game.get_cinci()[-1].get_y1() + 44)
+                        game.get_cinci().append(rezerva.pop())
+                    ok = True
+
+            if len(game.get_sase())>0 and ok == False:
+                if rezerva[-1].retrun_value() == game.get_sase()[-1].retrun_value() - 1 and rezerva[-1].return_color() != game.get_sase()[-1].return_color():
+                    while len(rezerva) > 0:
+                        rezerva[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                            game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                        game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                             game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y1() + 44)
+                        game.get_sase().append(rezerva.pop())
+                    ok = True
+            elif len(rezerva) > 0:
+                if len(game.get_sase()) == 0 and rezerva[-1].retrun_value() == 13 and ok == False:
+                    rezerva[-1].set_new_range(game.get_sapte_deck().get_x1(), game.get_sapte_deck().get_y1(),
+                                                  game.get_sapte_deck().get_x2(), game.get_sapte_deck().get_y2())
+                    game.get_sase().append(rezerva.pop())
+                    while len(rezerva) > 0:
+                         rezerva[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                                  game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                         game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                                        game.get_sase()[-1].get_x2(),
+                                                        game.get_sase()[-1].get_y1() + 44)
+                         game.get_sase().append(rezerva.pop())
+                    ok = True
+            if ok == False :
+                while len(rezerva) > 0:
+                   game.get_sapte().append(rezerva.pop())
+
+        if len(game.get_sapte()) > 0:
+            game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                               game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y1() + 200)
+            if game.get_sapte()[-1].return_hide():
+                game.get_sapte()[-1].change_hide()
+
+def make_inimi_move(game: Game):
+    if len(game.get_inimi()) > 0 :
+        element = game.get_inimi()[-1]
+        ok = False
+        if element.retrun_value() > 1:
+            if len(game.get_unu()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_unu()[-1].return_color() == "negru" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                    game.get_inimi().pop()
+                    element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                    game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y1() + 44)
+                    game.get_unu().append(element)
+                    ok = True
+                elif element.return_color() == "negru" and game.get_unu()[-1].return_color() == "rosu" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                    game.get_inimi().pop()
+                    element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                    game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y1() + 44)
+                    game.get_unu().append(element)
+                    ok = True
+
+            elif len(game.get_unu()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_inimi().pop()
+                element.set_new_range(game.get_unu_deck().get_x1(),game.get_unu_deck().get_y1(),
+                                      game.get_unu_deck().get_x2(),game.get_unu_deck().get_y2() )
+                game.get_unu().append(element)
+                ok = True
+
+            if len(game.get_doi()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_doi()[-1].return_color() == "negru" and  element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                    game.get_inimi().pop()
+                    print("A")
+                    element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                    game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y1() + 44)
+                    game.get_doi().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_doi()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                    game.get_inimi().pop()
+                    element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                    game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y1() + 44)
+                    game.get_doi().append(element)
+                    ok = True
+
+            elif len(game.get_doi()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_inimi().pop()
+                element.set_new_range(game.get_doi_deck().get_x1(),game.get_doi_deck().get_y1(),
+                                      game.get_doi_deck().get_x2(),game.get_doi_deck().get_y2() )
+                game.get_doi().append(element)
+                ok = True
+
+            if len(game.get_trei()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_trei()[-1].return_color() == "negru" and  element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                    game.get_inimi().pop()
+                    element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                    game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y1() + 44)
+                    game.get_trei().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_trei()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                    game.get_inimi().pop()
+                    element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                    game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y1() + 44)
+                    game.get_trei().append(element)
+                    ok = True
+
+            elif len(game.get_trei()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_inimi().pop()
+                element.set_new_range(game.get_trei_deck().get_x1(),game.get_trei_deck().get_y1(),
+                                      game.get_trei_deck().get_x2(),game.get_trei_deck().get_y2() )
+                game.get_trei().append(element)
+                ok = True
+
+            if len(game.get_patru()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_patru()[-1].return_color() == "negru" and  element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                    game.get_inimi().pop()
+                    element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                    game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y1() + 44)
+                    game.get_patru().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_patru()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                    game.get_inimi().pop()
+                    element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                    game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y1() + 44)
+                    game.get_patru().append(element)
+                    ok = True
+
+            elif len(game.get_patru()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_inimi().pop()
+                element.set_new_range(game.get_patru_deck().get_x1(),game.get_patru_deck().get_y1(),
+                                      game.get_patru_deck().get_x2(),game.get_patru_deck().get_y2() )
+                game.get_patru().append(element)
+                ok = True
+
+            if len(game.get_cinci()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_cinci()[-1].return_color() == "negru" and  element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                    game.get_inimi().pop()
+                    element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                    game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y1() + 44)
+                    game.get_cinci().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_cinci()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                    game.get_inimi().pop()
+                    element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                    game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y1() + 44)
+                    game.get_cinci().append(element)
+                    ok = True
+
+            elif len(game.get_cinci()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_inimi().pop()
+                element.set_new_range(game.get_cinci_deck().get_x1(),game.get_cinci_deck().get_y1(),
+                                      game.get_cinci_deck().get_x2(),game.get_cinci_deck().get_y2() )
+                game.get_cinci().append(element)
+                ok = True
+
+            if len(game.get_sase()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_sase()[-1].return_color() == "negru" and  element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                    game.get_inimi().pop()
+                    element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                    game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y1() + 44)
+                    game.get_sase().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_sase()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                    game.get_inimi().pop()
+                    element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                    game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y1() + 44)
+                    game.get_sase().append(element)
+                    ok = True
+
+            elif len(game.get_sase()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_inimi().pop()
+                element.set_new_range(game.get_sase_deck().get_x1(),game.get_sase_deck().get_y1(),
+                                      game.get_sase_deck().get_x2(),game.get_sase_deck().get_y2() )
+                game.get_sase().append(element)
+                ok = True
+
+            if len(game.get_sapte()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_sapte()[-1].return_color() == "negru" and  element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                    game.get_inimi().pop()
+                    element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                    game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y1() + 44)
+                    game.get_sapte().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_sapte()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                    game.get_inimi().pop()
+                    element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                    game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y1() + 44)
+                    game.get_sapte().append(element)
+                    ok = True
+
+            elif len(game.get_sapte()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_inimi().pop()
+                element.set_new_range(game.get_sapte_deck().get_x1(),game.get_sapte_deck().get_y1(),
+                                      game.get_sapte_deck().get_x2(),game.get_sapte_deck().get_y2() )
+                game.get_sapte().append(element)
+
+def make_frunze_move(game: Game):
+    if len(game.get_frunze()) > 0 :
+        element = game.get_frunze()[-1]
+        ok = False
+        if element.retrun_value() > 1:
+            if len(game.get_unu()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_unu()[-1].return_color() == "negru" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                    game.get_frunze().pop()
+                    element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                    game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y1() + 44)
+                    game.get_unu().append(element)
+                    ok = True
+                elif element.return_color() == "negru" and game.get_unu()[-1].return_color() == "rosu" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                    game.get_frunze().pop()
+                    element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                    game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y1() + 44)
+                    game.get_unu().append(element)
+                    ok = True
+
+            elif len(game.get_unu()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_frunze().pop()
+                element.set_new_range(game.get_unu_deck().get_x1(),game.get_unu_deck().get_y1(),
+                                      game.get_unu_deck().get_x2(),game.get_unu_deck().get_y2() )
+                game.get_unu().append(element)
+                ok = True
+
+            if len(game.get_doi()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_doi()[-1].return_color() == "negru" and  element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                    game.get_frunze().pop()
+                    print("A")
+                    element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                    game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y1() + 44)
+                    game.get_doi().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_doi()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                    game.get_frunze().pop()
+                    element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                    game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y1() + 44)
+                    game.get_doi().append(element)
+                    ok = True
+
+            elif len(game.get_doi()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_frunze().pop()
+                element.set_new_range(game.get_doi_deck().get_x1(),game.get_doi_deck().get_y1(),
+                                      game.get_doi_deck().get_x2(),game.get_doi_deck().get_y2() )
+                game.get_doi().append(element)
+                ok = True
+
+            if len(game.get_trei()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_trei()[-1].return_color() == "negru" and  element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                    game.get_frunze().pop()
+                    element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                    game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y1() + 44)
+                    game.get_trei().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_trei()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                    game.get_frunze().pop()
+                    element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                    game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y1() + 44)
+                    game.get_trei().append(element)
+                    ok = True
+
+            elif len(game.get_trei()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_frunze().pop()
+                element.set_new_range(game.get_trei_deck().get_x1(),game.get_trei_deck().get_y1(),
+                                      game.get_trei_deck().get_x2(),game.get_trei_deck().get_y2() )
+                game.get_trei().append(element)
+                ok = True
+
+            if len(game.get_patru()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_patru()[-1].return_color() == "negru" and  element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                    game.get_frunze().pop()
+                    element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                    game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y1() + 44)
+                    game.get_patru().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_patru()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                    game.get_frunze().pop()
+                    element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                    game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y1() + 44)
+                    game.get_patru().append(element)
+                    ok = True
+
+            elif len(game.get_patru()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_frunze().pop()
+                element.set_new_range(game.get_patru_deck().get_x1(),game.get_patru_deck().get_y1(),
+                                      game.get_patru_deck().get_x2(),game.get_patru_deck().get_y2() )
+                game.get_patru().append(element)
+                ok = True
+
+            if len(game.get_cinci()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_cinci()[-1].return_color() == "negru" and  element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                    game.get_frunze().pop()
+                    element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                    game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y1() + 44)
+                    game.get_cinci().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_cinci()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                    game.get_frunze().pop()
+                    element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                    game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y1() + 44)
+                    game.get_cinci().append(element)
+                    ok = True
+
+            elif len(game.get_cinci()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_frunze().pop()
+                element.set_new_range(game.get_cinci_deck().get_x1(),game.get_cinci_deck().get_y1(),
+                                      game.get_cinci_deck().get_x2(),game.get_cinci_deck().get_y2() )
+                game.get_cinci().append(element)
+                ok = True
+
+            if len(game.get_sase()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_sase()[-1].return_color() == "negru" and  element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                    game.get_frunze().pop()
+                    element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                    game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y1() + 44)
+                    game.get_sase().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_sase()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                    game.get_frunze().pop()
+                    element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                    game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y1() + 44)
+                    game.get_sase().append(element)
+                    ok = True
+
+            elif len(game.get_sase()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_frunze().pop()
+                element.set_new_range(game.get_sase_deck().get_x1(),game.get_sase_deck().get_y1(),
+                                      game.get_sase_deck().get_x2(),game.get_sase_deck().get_y2() )
+                game.get_sase().append(element)
+                ok = True
+
+            if len(game.get_sapte()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_sapte()[-1].return_color() == "negru" and  element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                    game.get_frunze().pop()
+                    element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                    game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y1() + 44)
+                    game.get_sapte().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_sapte()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                    game.get_frunze().pop()
+                    element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                    game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y1() + 44)
+                    game.get_sapte().append(element)
+                    ok = True
+
+            elif len(game.get_sapte()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_frunze().pop()
+                element.set_new_range(game.get_sapte_deck().get_x1(),game.get_sapte_deck().get_y1(),
+                                      game.get_sapte_deck().get_x2(),game.get_sapte_deck().get_y2() )
+                game.get_sapte().append(element)
+
+def make_romburi_move(game: Game):
+    if len(game.get_romburi()) > 0 :
+        element = game.get_romburi()[-1]
+        ok = False
+        if element.retrun_value() > 1:
+            if len(game.get_unu()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_unu()[-1].return_color() == "negru" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                    game.get_romburi().pop()
+                    element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                    game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y1() + 44)
+                    game.get_unu().append(element)
+                    ok = True
+                elif element.return_color() == "negru" and game.get_unu()[-1].return_color() == "rosu" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                    game.get_romburi().pop()
+                    element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                    game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y1() + 44)
+                    game.get_unu().append(element)
+                    ok = True
+
+            elif len(game.get_unu()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_romburi().pop()
+                element.set_new_range(game.get_unu_deck().get_x1(),game.get_unu_deck().get_y1(),
+                                      game.get_unu_deck().get_x2(),game.get_unu_deck().get_y2() )
+                game.get_unu().append(element)
+                ok = True
+
+            if len(game.get_doi()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_doi()[-1].return_color() == "negru" and  element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                    game.get_romburi().pop()
+                    print("A")
+                    element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                    game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y1() + 44)
+                    game.get_doi().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_doi()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                    game.get_romburi().pop()
+                    element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                    game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y1() + 44)
+                    game.get_doi().append(element)
+                    ok = True
+
+            elif len(game.get_doi()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_romburi().pop()
+                element.set_new_range(game.get_doi_deck().get_x1(),game.get_doi_deck().get_y1(),
+                                      game.get_doi_deck().get_x2(),game.get_doi_deck().get_y2() )
+                game.get_doi().append(element)
+                ok = True
+
+            if len(game.get_trei()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_trei()[-1].return_color() == "negru" and  element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                    game.get_romburi().pop()
+                    element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                    game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y1() + 44)
+                    game.get_trei().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_trei()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                    game.get_romburi().pop()
+                    element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                    game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y1() + 44)
+                    game.get_trei().append(element)
+                    ok = True
+
+            elif len(game.get_trei()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_romburi().pop()
+                element.set_new_range(game.get_trei_deck().get_x1(),game.get_trei_deck().get_y1(),
+                                      game.get_trei_deck().get_x2(),game.get_trei_deck().get_y2() )
+                game.get_trei().append(element)
+                ok = True
+
+            if len(game.get_patru()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_patru()[-1].return_color() == "negru" and  element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                    game.get_romburi().pop()
+                    element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                    game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y1() + 44)
+                    game.get_patru().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_patru()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                    game.get_romburi().pop()
+                    element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                    game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y1() + 44)
+                    game.get_patru().append(element)
+                    ok = True
+
+            elif len(game.get_patru()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_romburi().pop()
+                element.set_new_range(game.get_patru_deck().get_x1(),game.get_patru_deck().get_y1(),
+                                      game.get_patru_deck().get_x2(),game.get_patru_deck().get_y2() )
+                game.get_patru().append(element)
+                ok = True
+
+            if len(game.get_cinci()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_cinci()[-1].return_color() == "negru" and  element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                    game.get_romburi().pop()
+                    element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                    game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y1() + 44)
+                    game.get_cinci().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_cinci()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                    game.get_romburi().pop()
+                    element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                    game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y1() + 44)
+                    game.get_cinci().append(element)
+                    ok = True
+
+            elif len(game.get_cinci()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_romburi().pop()
+                element.set_new_range(game.get_cinci_deck().get_x1(),game.get_cinci_deck().get_y1(),
+                                      game.get_cinci_deck().get_x2(),game.get_cinci_deck().get_y2() )
+                game.get_cinci().append(element)
+                ok = True
+
+            if len(game.get_sase()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_sase()[-1].return_color() == "negru" and  element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                    game.get_romburi().pop()
+                    element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                    game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y1() + 44)
+                    game.get_sase().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_sase()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                    game.get_romburi().pop()
+                    element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                    game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y1() + 44)
+                    game.get_sase().append(element)
+                    ok = True
+
+            elif len(game.get_sase()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_romburi().pop()
+                element.set_new_range(game.get_sase_deck().get_x1(),game.get_sase_deck().get_y1(),
+                                      game.get_sase_deck().get_x2(),game.get_sase_deck().get_y2() )
+                game.get_sase().append(element)
+                ok = True
+
+            if len(game.get_sapte()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_sapte()[-1].return_color() == "negru" and  element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                    game.get_romburi().pop()
+                    element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                    game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y1() + 44)
+                    game.get_sapte().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_sapte()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                    game.get_romburi().pop()
+                    element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                    game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y1() + 44)
+                    game.get_sapte().append(element)
+                    ok = True
+
+            elif len(game.get_sapte()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_romburi().pop()
+                element.set_new_range(game.get_sapte_deck().get_x1(),game.get_sapte_deck().get_y1(),
+                                      game.get_sapte_deck().get_x2(),game.get_sapte_deck().get_y2() )
+                game.get_sapte().append(element)
+
+def make_trefle_move(game: Game):
+    if len(game.get_trefle()) > 0 :
+        element = game.get_trefle()[-1]
+        ok = False
+        if element.retrun_value() > 1:
+            if len(game.get_unu()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_unu()[-1].return_color() == "negru" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                    game.get_trefle().pop()
+                    element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                    game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y1() + 44)
+                    game.get_unu().append(element)
+                    ok = True
+                elif element.return_color() == "negru" and game.get_unu()[-1].return_color() == "rosu" and element.retrun_value() == game.get_unu()[-1].retrun_value() - 1:
+                    game.get_trefle().pop()
+                    element.set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1() + 45,
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y2() + 45)
+                    game.get_unu()[-1].set_new_range(game.get_unu()[-1].get_x1(), game.get_unu()[-1].get_y1(),
+                                          game.get_unu()[-1].get_x2(), game.get_unu()[-1].get_y1() + 44)
+                    game.get_unu().append(element)
+                    ok = True
+
+            elif len(game.get_unu()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_trefle().pop()
+                element.set_new_range(game.get_unu_deck().get_x1(),game.get_unu_deck().get_y1(),
+                                      game.get_unu_deck().get_x2(),game.get_unu_deck().get_y2() )
+                game.get_unu().append(element)
+                ok = True
+
+            if len(game.get_doi()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_doi()[-1].return_color() == "negru" and  element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                    game.get_trefle().pop()
+                    print("A")
+                    element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                    game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y1() + 44)
+                    game.get_doi().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_doi()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_doi()[-1].retrun_value() - 1:
+                    game.get_trefle().pop()
+                    element.set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1() + 45,
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y2() + 45)
+                    game.get_doi()[-1].set_new_range(game.get_doi()[-1].get_x1(), game.get_doi()[-1].get_y1(),
+                                          game.get_doi()[-1].get_x2(), game.get_doi()[-1].get_y1() + 44)
+                    game.get_doi().append(element)
+                    ok = True
+
+            elif len(game.get_doi()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_trefle().pop()
+                element.set_new_range(game.get_doi_deck().get_x1(),game.get_doi_deck().get_y1(),
+                                      game.get_doi_deck().get_x2(),game.get_doi_deck().get_y2() )
+                game.get_doi().append(element)
+                ok = True
+
+            if len(game.get_trei()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_trei()[-1].return_color() == "negru" and  element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                    game.get_trefle().pop()
+                    element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                    game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y1() + 44)
+                    game.get_trei().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_trei()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_trei()[-1].retrun_value() - 1:
+                    game.get_trefle().pop()
+                    element.set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1() + 45,
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y2() + 45)
+                    game.get_trei()[-1].set_new_range(game.get_trei()[-1].get_x1(), game.get_trei()[-1].get_y1(),
+                                          game.get_trei()[-1].get_x2(), game.get_trei()[-1].get_y1() + 44)
+                    game.get_trei().append(element)
+                    ok = True
+
+            elif len(game.get_trei()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_trefle().pop()
+                element.set_new_range(game.get_trei_deck().get_x1(),game.get_trei_deck().get_y1(),
+                                      game.get_trei_deck().get_x2(),game.get_trei_deck().get_y2() )
+                game.get_trei().append(element)
+                ok = True
+
+            if len(game.get_patru()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_patru()[-1].return_color() == "negru" and  element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                    game.get_trefle().pop()
+                    element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                    game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y1() + 44)
+                    game.get_patru().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_patru()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_patru()[-1].retrun_value() - 1:
+                    game.get_trefle().pop()
+                    element.set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1() + 45,
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y2() + 45)
+                    game.get_patru()[-1].set_new_range(game.get_patru()[-1].get_x1(), game.get_patru()[-1].get_y1(),
+                                          game.get_patru()[-1].get_x2(), game.get_patru()[-1].get_y1() + 44)
+                    game.get_patru().append(element)
+                    ok = True
+
+            elif len(game.get_patru()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_trefle().pop()
+                element.set_new_range(game.get_patru_deck().get_x1(),game.get_patru_deck().get_y1(),
+                                      game.get_patru_deck().get_x2(),game.get_patru_deck().get_y2() )
+                game.get_patru().append(element)
+                ok = True
+
+            if len(game.get_cinci()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_cinci()[-1].return_color() == "negru" and  element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                    game.get_trefle().pop()
+                    element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                    game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y1() + 44)
+                    game.get_cinci().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_cinci()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_cinci()[-1].retrun_value() - 1:
+                    game.get_trefle().pop()
+                    element.set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1() + 45,
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y2() + 45)
+                    game.get_cinci()[-1].set_new_range(game.get_cinci()[-1].get_x1(), game.get_cinci()[-1].get_y1(),
+                                          game.get_cinci()[-1].get_x2(), game.get_cinci()[-1].get_y1() + 44)
+                    game.get_cinci().append(element)
+                    ok = True
+
+            elif len(game.get_cinci()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_trefle().pop()
+                element.set_new_range(game.get_cinci_deck().get_x1(),game.get_cinci_deck().get_y1(),
+                                      game.get_cinci_deck().get_x2(),game.get_cinci_deck().get_y2() )
+                game.get_cinci().append(element)
+                ok = True
+
+            if len(game.get_sase()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_sase()[-1].return_color() == "negru" and  element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                    game.get_trefle().pop()
+                    element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                    game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y1() + 44)
+                    game.get_sase().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_sase()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_sase()[-1].retrun_value() - 1:
+                    game.get_trefle().pop()
+                    element.set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1() + 45,
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y2() + 45)
+                    game.get_sase()[-1].set_new_range(game.get_sase()[-1].get_x1(), game.get_sase()[-1].get_y1(),
+                                          game.get_sase()[-1].get_x2(), game.get_sase()[-1].get_y1() + 44)
+                    game.get_sase().append(element)
+                    ok = True
+
+            elif len(game.get_sase()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_trefle().pop()
+                element.set_new_range(game.get_sase_deck().get_x1(),game.get_sase_deck().get_y1(),
+                                      game.get_sase_deck().get_x2(),game.get_sase_deck().get_y2() )
+                game.get_sase().append(element)
+                ok = True
+
+            if len(game.get_sapte()) > 0 and ok == False:
+                if element.return_color() == "rosu" and game.get_sapte()[-1].return_color() == "negru" and  element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                    game.get_trefle().pop()
+                    element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                    game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y1() + 44)
+                    game.get_sapte().append(element)
+                    ok = True
+
+                elif element.return_color() == "negru" and game.get_sapte()[-1].return_color() == "rosu" and  element.retrun_value() == game.get_sapte()[-1].retrun_value() - 1:
+                    game.get_trefle().pop()
+                    element.set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1() + 45,
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y2() + 45)
+                    game.get_sapte()[-1].set_new_range(game.get_sapte()[-1].get_x1(), game.get_sapte()[-1].get_y1(),
+                                          game.get_sapte()[-1].get_x2(), game.get_sapte()[-1].get_y1() + 44)
+                    game.get_sapte().append(element)
+                    ok = True
+
+            elif len(game.get_sapte()) == 0 and ok == False and element.retrun_value() == 13:
+                game.get_trefle().pop()
+                element.set_new_range(game.get_sapte_deck().get_x1(),game.get_sapte_deck().get_y1(),
+                                      game.get_sapte_deck().get_x2(),game.get_sapte_deck().get_y2() )
+                game.get_sapte().append(element)
 
 
 def make_a_move(game: Game, x, y):
@@ -399,6 +4055,77 @@ def make_a_move(game: Game, x, y):
     y2 = copy.get_y2()
     if x <= x2 and x >= x1 and y <= y2 and y >= y1:
         make_resturi2_move(g)
+    copy = g.get_unu_deck()
+    x1 = copy.get_x1()
+    x2 = copy.get_x2()
+    y1 = copy.get_y1()
+    if x <= x2 and x >= x1 and y >= y1:
+        make_unu_move(g,x,y)
+    copy = g.get_doi_deck()
+    x1 = copy.get_x1()
+    x2 = copy.get_x2()
+    y1 = copy.get_y1()
+    if x <= x2 and x >= x1 and y >= y1:
+        make_doi_move(g, x, y)
+    copy = g.get_trei_deck()
+    x1 = copy.get_x1()
+    x2 = copy.get_x2()
+    y1 = copy.get_y1()
+    if x <= x2 and x >= x1 and y >= y1:
+        make_trei_move(g, x, y)
+    copy = g.get_patru_deck()
+    x1 = copy.get_x1()
+    x2 = copy.get_x2()
+    y1 = copy.get_y1()
+    if x <= x2 and x >= x1 and y >= y1:
+        make_patru_move(g, x, y)
+    copy = g.get_cinci_deck()
+    x1 = copy.get_x1()
+    x2 = copy.get_x2()
+    y1 = copy.get_y1()
+    if x <= x2 and x >= x1 and y >= y1:
+        make_cinci_move(g, x, y)
+    copy = g.get_sase_deck()
+    x1 = copy.get_x1()
+    x2 = copy.get_x2()
+    y1 = copy.get_y1()
+    if x <= x2 and x >= x1 and y >= y1:
+        make_sase_move(g, x, y)
+    copy = g.get_sapte_deck()
+    x1 = copy.get_x1()
+    x2 = copy.get_x2()
+    y1 = copy.get_y1()
+    if x <= x2 and x >= x1 and y >= y1:
+        make_sapte_move(g, x, y)
+    copy = g.get_inimi_deck()
+    x1 = copy.get_x1()
+    x2 = copy.get_x2()
+    y1 = copy.get_y1()
+    y2 = copy.get_y2()
+    if x <= x2 and x >= x1 and y <= y2 and y >= y1:
+        make_inimi_move(g)
+    copy = g.get_frunze_deck()
+    x1 = copy.get_x1()
+    x2 = copy.get_x2()
+    y1 = copy.get_y1()
+    y2 = copy.get_y2()
+    if x <= x2 and x >= x1 and y <= y2 and y >= y1:
+        make_frunze_move(g)
+    copy = g.get_romburi_deck()
+    x1 = copy.get_x1()
+    x2 = copy.get_x2()
+    y1 = copy.get_y1()
+    y2 = copy.get_y2()
+    if x <= x2 and x >= x1 and y <= y2 and y >= y1:
+        make_romburi_move(g)
+    copy = g.get_trefle_deck()
+    x1 = copy.get_x1()
+    x2 = copy.get_x2()
+    y1 = copy.get_y1()
+    y2 = copy.get_y2()
+    if x <= x2 and x >= x1 and y <= y2 and y >= y1:
+        make_trefle_move(g)
+
 
 
 
@@ -585,6 +4312,10 @@ def print_scene(g: Game):
             else:
                 card = pygame.transform.scale(pygame.image.load(carte.get_link()), (140, 200))
                 cards_on_table(card, carte.get_x1(), carte.get_y1())
+    if g.final():
+        card = pygame.transform.scale(pygame.image.load('Cards\\win.jpg'), (600, 400))
+        cards_on_table(card, 300, 300)
+
 
 
 if __name__ == '__main__':
@@ -608,11 +4339,18 @@ if __name__ == '__main__':
                 running = False
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if pygame.mouse.get_pressed()[0]:
-                    position = pygame.mouse.get_pos()
-                    x = position[0]
-                    y = position[1]
-                    make_a_move(game, x, y)
-                    game.show_Table()
+                    if not game.final():
+                        position = pygame.mouse.get_pos()
+                        x = position[0]
+                        y = position[1]
+                        print("\n")
+                        print(x)
+                        print(y)
+                        make_a_move(game, x, y)
+                        game.show_Table()
+                    else:
+                        game = setup()
+
 
         print_scene(game)
 
