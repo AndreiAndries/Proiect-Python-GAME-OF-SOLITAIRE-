@@ -1,6 +1,4 @@
-# Proiect-Python-GAME-OF-SOLITAIRE-
-
-Andrieș Dumitru-Andrei
+# Proiect-Python-GAME-OF-SOLITAIRE-Andrieș Dumitru-Andrei
 
 In acest proiect am realizat jocul solitaire in python
 
